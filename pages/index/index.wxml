@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container">
+  <!--banner  -->
+  <swiper class='indexSwiper' indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="" height=""/>
+        </swiper-item>
+    </block>
+  </swiper>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+    <view class='top_addr picker'>
+      <image src='/img/icon_addr6.png'></image>
+      <text class='addr_text'>{{region[1]}}-{{region[2]}}</text>
+    </view>
+  </picker>
+  <view class='search_enter' bindtap='goSearch'>
+    <image src='/img/icon_search.png'></image>
+    <text class='search_tip'>输入维修品类的关键字</text>
+  </view>
+</view>
+<view class='class_one'>
+  <navigator class='spu border_bottom' url='./list/list' open-type='navigate'>
+    <image src='/img/icon1.png'></image>
+    <text>开关电路</text>
+  </navigator>
+  <navigator class='spu border_bottom' url='./list/list' open-type='navigate'>
+    <image src='/img/icon1.png'></image>
+    <text>开关电路</text>
+  </navigator>
+  <navigator class='spu border_bottom' url='./list/list' open-type='navigate'>
+    <image src='/img/icon1.png'></image>
+    <text>开关电路</text>
+  </navigator>
+  <navigator class='spu border_bottom' url='./list/list' open-type='navigate'>
+    <image src='/img/icon1.png'></image>
+    <text>开关电路</text>
+  </navigator>
+
+
+
+</view>
+
+
+<!--功能区  -->
+
+

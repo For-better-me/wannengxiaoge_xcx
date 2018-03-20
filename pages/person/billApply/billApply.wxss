@@ -1,0 +1,83 @@
+/* pages/person/billApply/billApply.wxss */
+.top{
+  padding: 30rpx 0;
+  background: #fff;
+  overflow: hidden
+}
+.top .title{
+  font-size: 31rpx;
+  padding: 0 30rpx;
+}
+.top .priceTxt{
+  display: block;
+  text-align: center;
+  font-size: 74rpx;
+  color: #fb870d;
+  position: relative;
+  padding:20rpx 0 30rpx;
+}
+.top .priceTxt:before{
+  content: '￥';
+  font-size: 29rpx;
+}
+.top .border_top{
+  overflow: hidden;
+  padding: 35rpx 30rpx;
+}
+.top .border_top text{
+  float: left;
+  display: block;
+  font-size: 29rpx;
+  margin-top: 8rpx;
+}
+.top .border_top input{
+  display: inline-block;
+  text-align: right; 
+  float: right;
+  min-width: 70%;
+  font-size: 27rpx;
+}
+.top .border_top textarea{
+  margin-top: 64rpx;
+  height: 138rpx;
+  width: 100%;
+  font-size: 25rpx
+}
+.top .textarea{
+  padding-bottom: 0;
+}
+
+.bottom {
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx 20rpx 0;
+}
+.bottom  .title{
+  font-size: 31rpx;
+}
+.bottom view{
+  overflow: hidden;
+  padding: 30rpx 10rpx;
+  font-size: 31rpx;
+}
+.bottom view input{
+  float: right;
+  text-align: right;
+  min-width: 70%;
+}
+.select_addr:disabled {
+  color: #ccc;
+}
+.tip{
+  padding: 30rpx;
+  margin-bottom: 130rpx;
+}
+.tip text{
+  display: inline-block;
+  line-height: 180%;
+  color: #666;
+}
+.tip .text{
+  font-size: 31rpx;
+  color: #333
+}

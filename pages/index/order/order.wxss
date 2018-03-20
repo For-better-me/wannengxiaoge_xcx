@@ -1,0 +1,124 @@
+/* pages/index/order/order.wxss */
+.buyer_info,.buyer_fix{
+  padding-left: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.buyer_addr,.come_time{
+  position: relative
+}
+.buyer_addr{
+  padding: 31rpx 0;
+}
+.icon_addr,.icon_time{
+  width: 42rpx;
+  height: 42rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.buyer_addr_wrap,.choose_time{
+  width: 600rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 26rpx;
+}
+.buyer_addr_wrap text{
+    font-size: 27rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 46rpx;
+    width: 95%;
+    display: block;
+
+}
+.come_time{
+
+}
+.choose_time{
+    font-size: 27rpx;
+    display: inline-block;
+    width: 600rpx;
+    vertical-align: top;
+    line-height: 98rpx;
+    height: 98rpx;
+}
+.choose_time text{
+   font-size: 27rpx;
+   float: right;
+   margin-right: 45rpx;
+}
+.icon_time{
+  vertical-align: middle;
+  margin-top: 28rpx;
+}
+.icon_arrow{
+  position: absolute;
+  right: 30rpx;
+  top:0;
+  bottom: 0;
+  margin:auto;
+  width: 13rpx;
+  height: 22rpx;
+}
+
+.buyer_fix view{
+  padding-right: 30rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+}
+
+.desc_question{
+  background: #fff;
+  padding-top: 20rpx;
+  padding-bottom: 35rpx;
+  margin-bottom: 20rpx;
+}
+.desc_question textarea{
+  width: 100%;
+  font-size: 27rpx;
+  margin-top: 15rpx;
+  line-height: 33rpx;
+  display: block;
+  min-height: 120rpx;
+  color: #333;
+}
+
+.btn_upload{
+  width: 148rpx;
+  height: 148rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 25rpx;
+  position: relative;
+}
+.btn_upload image{
+  width: 100%;
+  height: 100%;
+}
+.upload{
+  margin-top: 10rpx;
+}
+.btn_upload .close_img{
+  width: 47rpx;
+  height: 47rpx;
+  position: absolute;
+  right: -22rpx;
+  top: -22rpx;
+}
+
+.warm_tip{
+  background: #fff;
+  padding-top: 20rpx;
+  padding-bottom: 35rpx;
+  margin-bottom: 120rpx;
+}
+.tip_con{
+  margin-top: 15rpx;
+}
+.tip_con text{
+  font-size: 25rpx;
+  color: #666;
+  line-height: 38rpx;
+  display: block;
+}

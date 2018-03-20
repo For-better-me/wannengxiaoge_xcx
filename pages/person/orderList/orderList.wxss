@@ -1,0 +1,108 @@
+/* pages/person/orderList/orderList.wxss */
+.head{
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.head text{
+  display: block;
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 33rpx 0;
+  font-size: 27rpx;
+  color: #666;
+}
+.text{
+  color: #666;
+}
+.changeColor{
+  color: #fb870d !important;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.contentbox{
+  margin-top: 120rpx;
+  overflow: hidden;
+} 
+.orderTab{
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 0 30rpx;
+  overflow: hidden;
+}
+.order_num{
+  font-size: 25rpx;
+  padding: 30rpx 0;
+  overflow: hidden;
+}
+.orderTab .mid{
+   padding: 40rpx 0; 
+   overflow: hidden;
+}
+.orderTab .orderImg{
+  width: 160rpx;
+  height: 160rpx;
+}
+.orderTab .orderImg image {
+  width: 100%;
+  height: 100%;
+}
+.orderTab .order_msg{
+  width: 72%;
+  margin-left: 33rpx;
+}
+.orderTab .order_msg text{
+  display: block;
+}
+.order_msg .skuName {
+  font-size: 29rpx;
+  margin-bottom: 15rpx;
+}
+.order_msg .skuBuy_time ,.order_msg .skuStar_time{
+  font-size: 23rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+.order_msg .addrimg{
+  width: 18rpx;
+  height: 24rpx;
+  margin: 5rpx 10rpx 0 5rpx;
+}
+
+.state {
+  padding: 26rpx 0 24rpx;
+  overflow: hidden;
+}
+.state button {
+  float: right;
+  background: none;
+  border: 1rpx solid #9d9d9d;
+  padding: 0 1em;
+  color: #666;
+}
+.state button:nth-of-type(1) {
+  border-color:#fb870d;
+  color: #fb870d;
+  margin-left: 30rpx; 
+}
+.state .stateW{
+  width: 45%;
+  overflow: hidden;
+}
+.state .stateW text{
+  display: block;
+}
+.redTxt {
+  color: #e8321b;
+}
+.margin_top_10{
+  margin-top: 10rpx;
+}

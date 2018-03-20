@@ -1,0 +1,23 @@
+<!--pages/person/orderTrack/orderTrack.wxml-->
+<!--订单跟踪  -->
+<view class='orderState'>
+  <text class='fl num'>订单编号：{{num}}</text>
+  <text class='fr main_color state'>{{state}}</text>
+</view>
+<view class='orderInfo'>
+  <view class='line border_bottom'>维修项：
+    <text>{{skuname}}</text>
+  </view>
+  <view class='line border_bottom'>预约上门时间：
+    <text>{{toDorTime}}</text>
+  </view>
+  <view class='line'>订单进程</view>
+  <view class='process' wx:for="{{lists}}" wx:for-item="itemName" wx:for-index="idx">
+    <image src='{{idx==0?url:url2}}'></image>
+    <view class='z-line'></view>
+    <view class='fl processTxt'>
+      <text>{{itemName.dataid}}</text>
+      <text>{{itemName.message}}</text>
+    </view>
+  </view>
+</view>

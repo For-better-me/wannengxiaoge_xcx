@@ -1,0 +1,71 @@
+/* pages/status/status/register.wxss */
+
+.register_wrap {
+  margin-top: 20rpx;
+}
+
+.register_item {
+  background: #fff;
+  height: 103rpx;
+  line-height: 103rpx;
+}
+
+.register_item image {
+  width: 42rpx;
+  height: 42rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 40rpx;
+  margin-top: 28rpx;
+}
+
+.register_item view {
+  width: 645rpx;
+  display: inline-block;
+  height: 103rpx;
+  vertical-align: top;
+  margin-left: 25rpx;
+}
+
+.register_item input {
+  width: 460rpx;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 27rpx;
+  color: #333;
+}
+
+.register_item .capcha {
+  width: 150rpx;
+  display: inline-block;
+  font-size: 25rpx;
+  vertical-align: top;
+  line-height: 103rpx;
+  color: #fb870d;
+}
+
+.register_item  .icon_eye {
+  width: 43rpx;
+  height: 26rpx;
+  display: inline-block;
+  float: right;
+  margin-right: 40rpx;
+  margin-top: 37rpx;
+}
+
+.agreement{
+  font-size: 25rpx;
+  color: #999;
+  margin-top: 25rpx;
+}
+
+.agreement text{
+  font-size: 25rpx;
+  color: #4c91f8;
+}
+
+.button{
+  margin-top: 80rpx;
+}
+

@@ -1,0 +1,33 @@
+<!--pages/person/billDetail/billDetail.wxml-->
+<view class='msg'>
+  <view class='msg1'>
+    <text class='fl'>申请金额</text>
+    <text class='fr main_color'>处理中</text>
+  </view>
+  <view class='msg2'>
+    <text>2017-05-25 13:20:50</text>
+  </view>
+  <view class='msg3 border_bottom'>
+    <text class='priceTxt'>3000</text>
+  </view>
+  <view class='msg4 font2'>快递公司：
+    <text>韵达快递</text>
+  </view>
+  <view class='msg4 font2'>快递单号：
+    <text>1354354343445</text>
+  </view>
+</view>
+<view class='lists'>
+  <view class='title'>发票订单</view>
+  <view class='list border_top'>
+    <view class='img fl'>
+      <image src='/img/shopcar.png'></image>
+    </view>
+    <view class='fl info'>
+      <text class='info_name'>家庭灯具管道维修</text>
+      <text>订单编号：454354343433221</text>
+      <text>手动拆卸疏通</text>
+    </view>
+    <text class='priceNum'>￥300</text>
+  </view>
+</view>

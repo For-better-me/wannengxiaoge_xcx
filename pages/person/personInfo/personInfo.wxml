@@ -1,0 +1,32 @@
+<!--pages/person/personInfo/personInfo.wxml-->
+<form>
+  <view class='top'>
+    <text>头像</text>
+    <image src='/img/icon_arrow.png' class='icon'></image>
+    <view class='headImg' bindtap='cooseImg'>
+      <image src='{{headimg}}'></image>
+    </view>
+  </view>
+  <view class='bottom'>
+    <navigator url='../nickname/nickname'>
+      <view class='border_bottom'>昵称
+        <image src='/img/icon_arrow.png' class='icon'></image>
+        <text>一月搞事情</text>
+      </view>
+    </navigator>
+    <view class='border_bottom' bindtap='choosesex'>性别
+      <image src='/img/icon_arrow.png' class='icon'></image>
+      <text>{{sex}}</text>
+    </view>
+    <view bindtap='bindAge'>
+      <picker mode="multiSelector"  bindchange="agePickerChange" value="{{ageIndex}}" range="{{ageArray}}">
+        年龄
+        <image src='/img/icon_arrow.png' class='icon'></image>
+        <text>{{ageArray[0][ageIndex[0]]}}-{{ageArray[1][ageIndex[1]]}}</text>
+      </picker>
+    </view>
+  </view>
+</form>
+<view>
+
+</view>

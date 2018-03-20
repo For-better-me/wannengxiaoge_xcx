@@ -1,0 +1,2 @@
+/* pages/person/newAddr/newAddr.wxss */
+@import "../../template/editaddr/editAddr.wxss";

@@ -1,0 +1,8 @@
+ /* pages/person/editAddr/editAddr.wxss */
+@import "/pages/template/editaddr/editAddr.wxss";
+.form view text{
+  color: #999;
+}
+input [disabled]{
+    color:  #fff;
+}

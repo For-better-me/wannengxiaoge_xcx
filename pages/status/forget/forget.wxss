@@ -1,0 +1,2 @@
+/* pages/status/forget/forget.wxss */
+@import "/pages/status/register/register.wxss";

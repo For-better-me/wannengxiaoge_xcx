@@ -1,0 +1,8 @@
+<!--pages/person/setting/setting.wxml-->
+<view class='setting'>
+<navigator class='border_bottom' url='../account/account'>账户与安全 <image src='/img/icon_arrow.png'></image></navigator>
+<navigator class='border_bottom'>使用帮助 <image src='/img/icon_arrow.png'></image></navigator>
+<navigator class='border_bottom'>关于 <image src='/img/icon_arrow.png'></image></navigator>
+<navigator>客服电话 <image src='/img/icon_arrow.png'></image></navigator>
+</view>
+<view class='sign_out main_color' bindtap='tuichu'>退出登录</view>

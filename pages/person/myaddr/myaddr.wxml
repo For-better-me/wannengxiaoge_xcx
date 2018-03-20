@@ -1,0 +1,10 @@
+<!--pages/person/myaddr/myaddr.wxml-->
+<import src="../../template/addr/myaddr.wxml" />
+<block wx:for="{{addrArr}}">
+  <template is="addr"  data="{{...item,index}}" />
+</block>
+<view class='order_btn'>
+  <navigator url='../editAddr/editAddr'>
+    <button>添加新地址</button>
+  </navigator>
+</view>

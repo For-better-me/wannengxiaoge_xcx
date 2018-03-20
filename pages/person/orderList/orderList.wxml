@@ -1,0 +1,81 @@
+<!--pages/person/orderList/orderList.wxml-->
+<view class='head'>
+  <text class="{{ selected?'changeColor':'text'}}" bindtap='selected'>全部</text>
+  <text class="{{ selected1?'changeColor':'text'}}" bindtap='selected1'>待预付</text>
+  <text class="{{ selected2?'changeColor':'text'}}" bindtap='selected2'>进行中</text>
+  <text class="{{ selected3?'changeColor':'text'}}" bindtap='selected3'>已完成</text>
+  <text class="{{ selected4?'changeColor':'text'}}" bindtap='selected4'>待评价</text>
+</view>
+<view class='contentbox'>
+
+  <view class="{{selected?'show':'hidden'}}">
+
+    <view class='orderTab'>
+      <!--上  -->
+      <view class='order_num'>订单编号：
+        <text>WNQYD14587736</text>
+        <text class='fr main_color'>已接单，等待小哥电话沟通</text>
+      </view>
+      <!--中  -->
+      <view class='mid border_top'>
+        <view class='fl orderImg'>
+          <image src='/img/order_pic.png'></image>
+        </view>
+        <view class='fl order_msg'>
+          <text class='skuName'>马桶维修</text>
+          <text class='skuBuy_time'>下单时间：  2017-03-19  15:32</text>
+          <text class='skuStar_time'>上门时间：  2017-03-20  15:32</text>
+          <view>
+              <image class='addrimg fl' src='/img/icon_addr4.png'></image>
+              <text class='skuAddr fl'> 石家庄市新华区中储广场写字楼A座17层万能小哥技术部</text>
+          </view>
+        </view>
+      </view>
+      <!--下  -->
+      <view class='state border_top'>
+        <view class='fl stateW'>
+          <text class='redTxt'>退款中：￥70</text>
+          <text>原路退回预计7个工作日到账</text>
+        </view>
+        <button class='border_4' size='mini'>联系客服</button>
+      </view>
+    </view>
+
+    <view class='orderTab'>
+      <!--上  -->
+      <view class='order_num'>订单编号：
+        <text>WNQYD14587736</text>
+        <text class='fr main_color'>已接单，等待小哥电话沟通</text>
+      </view>
+      <!--中  -->
+      <view class='mid border_top'>
+        <view class='fl orderImg'>
+          <image src='/img/order_pic.png'></image>
+        </view>
+        <view class='fl order_msg'>
+          <text class='skuName'>马桶维修</text>
+          <text class='skuBuy_time'>下单时间：  2017-03-19  15:32</text>
+          <text class='skuStar_time'>上门时间：  2017-03-20  15:32</text>
+          <view>
+              <image class='addrimg fl' src='/img/icon_addr4.png'></image>
+              <text class='skuAddr fl'> 石家庄市新华区中储广场写字楼A座17层万能小哥技术部</text>
+          </view>
+        </view>
+      </view>
+      <!--下  -->
+      <view class='state border_top'>
+        <view class='fl stateW'>
+          <text class='main_color margin_top_10'>预付费：￥30</text>
+        </view>
+        <button class='border_4' size='mini'>取消订单</button>
+        <button class='border_4' size='mini'>联系小哥</button>
+      </view>
+    </view>
+    </view>
+
+
+    <view class="{{selected1?'show':'hidden'}}">1</view>
+    <view class="{{selected2?'show':'hidden'}}">2</view>
+    <view class="{{selected3?'show':'hidden'}}">3</view>
+    <view class="{{selected4?'show':'hidden'}}">4</view>
+  </view>

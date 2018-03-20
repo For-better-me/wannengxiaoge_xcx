@@ -1,0 +1,51 @@
+/* pages/person/myaddr/myaddr.wxss */
+.info{
+  background: #fff;
+  overflow: hidden;
+  padding-top: 30rpx; 
+  margin-bottom:20rpx;
+}
+.info .name{
+  margin: 0 30rpx;
+}
+.info .addr{
+  padding: 15rpx 30rpx;
+  margin-bottom: 22rpx;
+  line-height: 38rpx;
+  font-size: 25rpx;
+}
+.info .do{
+  padding: 25rpx 30rpx;
+  overflow: hidden;
+}
+.choose {
+  width: 180rpx;
+  height: 36rpx;
+  float: left;
+  position: relative;
+  top: -2rpx;
+  font-size: 25rpx;
+}
+.edit image{
+  width: 35rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+.delete image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+.edit, .delete{
+  float: right;
+}
+.edit {
+  margin-right: 44rpx;
+}
+.edit text, .delete text{
+  line-height: 34rpx;
+  display: inline-block;
+  float: left;
+}

@@ -1,0 +1,3 @@
+<!--pages/person/newAddr/newAddr.wxml-->
+<template is="editaddr" /> 
+<import src="../../template/editaddr/editAddr.wxml"/>

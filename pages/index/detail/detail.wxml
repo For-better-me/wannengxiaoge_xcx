@@ -1,0 +1,109 @@
+<!--pages/index/detail/detail.wxml-->
+<view class='detail_wrap'>
+  <view class='sku_banner'>
+    <image src='/img/fix-img.png'></image>
+  </view>
+  <view class='sku_name'>
+    <view class='wrap border_bottom'>
+      <text class='name'>开关插座维修</text>
+      <text class='price'>0.01<text class='font5'>起</text></text>
+    </view>
+  </view>
+  <view class='sku_item border_bottom' bindtap='chooseItem' wx:if="{{serveName}}">
+    <text class='font2'>已选服务</text>
+    <view>
+      <text>{{serveName}}</text>
+      <image src='/img/icon_arrow.png'></image>
+    </view>
+  </view>
+  <view class='sku_item border_bottom' bindtap='chooseItem' wx:else>
+    <text>请选择具体服务项</text>
+    <image src='/img/icon_arrow.png'></image>
+  </view>
+
+  <view class='title_wrap border_bottom'>
+    <view class="title {{numTitle == '0'?'on':''}}" data-num='0' bindtap='titleSwitch'>商品详情</view>
+    <view class="title {{numTitle == '1'?'on':''}}" data-num='1' bindtap='titleSwitch'>评论（2）</view>
+  </view>
+  <view class='sku_detail' wx:if="{{numTitle == '0'}}">
+    <image mode='widthFix' src='/img/1.jpg'></image>
+    <image mode='widthFix' src='/img/2.jpg'></image>
+    <image mode='widthFix' src='/img/3.jpg'></image>
+    <image mode='widthFix' src='/img/4.jpg'></image>
+    <image mode='widthFix' src='/img/5.jpg'></image>
+  </view>
+  <view class='comment_list' wx:else>
+    <view class='comment  wrap'>
+      <image class='avatar' mode='aspectFit' src='/img/avatar2.png'></image>
+      <view class='comment_info'>
+        <view class='user flex_class'>
+          <text class='nickname'>随心所欲</text>
+          <text class='comment_time'>2018-01-30</text>
+        </view>
+        <text class='comment_con'>从前初识这世间 万般流连 看着天边似在眼前也甘愿赴汤蹈火去走它一遍如今走过这世间 万般流连 翻过岁月不同侧脸措不及防闯入你的笑颜</text>
+      </view>
+
+    </view>
+    <view class='comment  wrap'>
+      <image class='avatar' mode='aspectFit' src='/img/avatar2.png'></image>
+      <view class='comment_info'>
+        <view class='user flex_class'>
+          <text class='nickname'>随心所欲</text>
+          <text class='comment_time'>2018-01-30</text>
+        </view>
+        <text class='comment_con'>从前初识这世间 万般流连 看着天边似在眼前也甘愿赴汤蹈火去走它一遍如今走过这世间 万般流连 翻过岁月不同侧脸措不及防闯入你的笑颜</text>
+      </view>
+
+    </view>
+  </view>
+  <view class='order_btn' bindtap='goFix'>
+    <button>立即报修</button>
+  </view>
+</view>
+<view class='layer_detail' animation="{{animationData}}">
+  <view class='detail_head border_bottom'>
+    <view class='wrap'>
+      <view class='sku_img'>
+        <image src='/img/order_pic.png'></image>
+      </view>
+      <view class='head_tit'>
+        <view class='unlimit'>
+          <text>100元/次</text>
+        </view>
+        <view class='choose_item'>
+          <text>已选择：<text class='choose_name'>{{serveName}}</text>
+          <text class='choose_num'>X{{serveNum}}</text></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='detail_body wrap'>
+    <view class='close_btn' bindtap='closeLayer'>
+      <image src='/img/icon_close1.png'></image>
+    </view>
+    <view class='layer_serve border_bottom'>
+      <text class='font3'>服务项</text>
+      <view class="border_4 {{_serveIndex==1?'choosed':''}}" data-index = '1' data-name='其他灯具维修' bindtap='chooseServe'>其他灯具维修</view>
+      <view class="border_4 {{_serveIndex==2?'choosed':''}}" data-index = '2' data-name='其他灯具维修2' bindtap='chooseServe'>其他灯具维修2</view>
+    </view>
+    <view class='serve_num border_bottom flex_class'>
+      <text class='font3'>维修数量</text>
+      <view class='control_count flex_class'>
+        <view class='count_btn sub' bindtap="countNum" data-type = '0' data-num = '{{serveNum}}'>
+          <image src='/img/icon_sub.png'></image>
+        </view>
+        <text class='show_count'>{{serveNum}}</text>
+        <view class='count_btn add' bindtap="countNum" data-type = '1' data-num = '{{serveNum}}'>
+          <image src='/img/icon_add.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='special_tip'>
+      <text class='font3'>特殊说明</text>
+      <text class='content'>特殊说明特殊说明特殊说明特殊说明特殊说明特殊说明特殊说明特殊说明</text>
+    </view>
+
+  </view>
+  <view class='.form_btn border_top go_fix' bindtap='goFix'>立即报修</view>
+</view>
+<view class='layer_black' wx:if='{{shadeFlag}}' animation="{{animationData2}}"></view>

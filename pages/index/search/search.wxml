@@ -1,0 +1,57 @@
+<!--pages/index/search/search.wxml-->
+<view class='search_box border_bottom'>
+  <image src='/img/icon_search2.png'></image>
+  <input placeholder='输入要搜索的内容' placeholder-class='placeholder_class'></input>
+</view>
+<view class='search_recommend'>
+  <view class='wrap'>
+    <view class='hot'>
+      <text class='font'>热门搜索</text>
+      <view class='border_top hot-item'>1、空调清洗</view>
+      <view class='border_top hot-item'>2、空调清洗</view>
+      <view class='border_top hot-item'>3、空调清洗</view>
+    </view>
+  </view>
+</view>
+<view class='search_recommend'>
+  <view class='wrap'>
+    <view class='hot'>
+      <text class='font'>常见问题</text>
+      <view class='nodata'>
+        <image src='/img/nodata3.png'></image>
+      </view>
+      <view class='border_top hot-item'>1、空调清洗</view>
+      <view class='border_top hot-item'>2、空调清洗</view>
+      <view class='border_top hot-item'>3、空调清洗</view>
+      <view class='border_top fast_order' bindtap='fastOrder'>快速下单</view>
+    </view>
+    <view class='about_serve'>
+      <text class='font'>相关服务</text>
+      <view class='nodata2'>
+        <image src='/img/nodata4.png'></image>
+      </view>
+      <view class='item_list'>
+        <view class='item border_bottom'>
+          <view class='item_img'>
+            <image src='/img/item1.png' mode='aspectFit'></image>
+          </view>
+          <view class='item_des'>
+            <text class='name ellipsis'>洗衣机安装维修安装维修安装维修</text>
+            <text class='desc ellipsis'>洗衣机安装维修安装维修安装维修</text>
+            <text class='price'>45/次</text>
+          </view>
+        </view>
+        <view class='item border_bottom'>
+          <view class='item_img'>
+            <image src='/img/item1.png' mode='aspectFit'></image>
+          </view>
+          <view class='item_des'>
+            <text class='name ellipsis'>洗衣机安装维修安装维修安装维修</text>
+            <text class='desc ellipsis'>洗衣机安装维修安装维修安装维修</text>
+            <text class='price'>45/次</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+/* pages/person/account/account.wxss */
+navigator {
+background: #fff;
+height: 90rpx;
+line-height: 90rpx;
+font-size: 29rpx;
+padding: 0 30rpx;
+margin-top: 20rpx;
+}
+navigator image{
+width: 12rpx;
+height: 21rpx;
+float: right;
+margin-top: 35rpx;
+}

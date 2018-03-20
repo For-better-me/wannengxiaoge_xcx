@@ -1,0 +1,169 @@
+/* pages/person/bill/bill.wxss */
+.navigationBar{
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.navigationBar text{
+  width: 50%;
+  display: block;
+  float: left;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 29rpx;
+}
+.showColor{
+  color: #333;
+  position: relative;
+}
+.showColor{
+  color: #fb870d;
+  position: relative;
+}
+.showColor:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #fb870d;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    .showColor:after{
+        transform: scaleY(0.7)
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .showColor:after{
+        transform: scaleY(0.5)
+    }
+}
+.lists{
+  margin: 90rpx 0 130rpx;
+  overflow: hidden;
+}
+.lists .list{
+  background: #fff;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.list .name{
+  display: inline-block;
+  padding: 25rpx 30rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 31rpx;
+}
+.list radio {
+  float: left;
+  margin-top: 8%;
+}
+.billImg{
+  width: 163rpx;
+  height: 163rpx;
+  float: left;
+  margin: 0 37rpx 0 33rpx;
+}
+.billImg image{
+  width: 100%;
+  height: 100%;
+}
+.list .info{
+  float: left;
+  width: 57%;
+}
+.list .info text{
+  display: block;
+  font-size: 27rpx;
+  color: #666;
+}
+.priceTxt{
+  font-size: 31rpx;
+  color: #f23030;
+  position: relative;
+  padding-left: 24rpx;
+}
+.priceTxt:before{
+  position: absolute;
+  content: '￥';
+  left: 0;
+  bottom: 3rpx;
+  font-size: 24rpx;
+}
+.list .msg{
+  padding: 36rpx 30rpx;
+  overflow: hidden;
+}
+.list .info .infoName{
+  min-height: 74rpx;
+  line-height:150%;
+  margin-top: 16rpx;
+
+}
+
+/*已申请  */
+.already {
+  margin: 20rpx 30rpx 0;
+  position: relative;
+}
+.already image{
+  width: 100%;
+  height: 316rpx;
+}
+.already .tip{
+  position: absolute;
+  top: 27rpx;
+  left: 30rpx;
+  right: 30rpx;
+}
+.already .tip text{
+  font-size: 31rpx;
+}
+.already .tip fr{
+  font-size: 27rpx;
+}
+.already .time{
+  position: absolute;
+  top: 56rpx;
+  left: 30rpx;
+  right: 30rpx;
+}
+.already .time text{
+  font-size: 22rpx;
+  color: #999;
+}
+.already .priceT{
+  position: absolute;
+  top: 34%;
+  left: 0;
+  right: 0;
+  text-align: center
+}
+.big_74{
+  font-size: 74rpx;
+  color: #fb870d;
+}
+.big_74:before{
+  font-size: 30rpx;
+  bottom: 15rpx;
+}
+.already navigator{
+  position: absolute;
+  bottom: 16rpx;
+  left: 30rpx;
+  right: 30rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}

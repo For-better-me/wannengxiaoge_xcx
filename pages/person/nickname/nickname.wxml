@@ -1,0 +1,8 @@
+<!--pages/person/nickname/nickname.wxml-->
+<form bindsubmit="editName">
+  <view class='nickname'>
+    <input value='123' placeholder-class='placeholder_class' placeholder='请输入昵称' maxlength = '15' name='name'></input>
+  </view>
+  <text class='tip'>支持2-15位汉字、字符</text>
+  <button form-type='submit'>保存</button>
+</form>

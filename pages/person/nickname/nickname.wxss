@@ -1,0 +1,32 @@
+/* pages/person/nickname/nickname.wxss */
+.nickname{
+  background: #fff;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.nickname input{
+  display: block;
+  margin: 27rpx 30rpx;
+  font-size: 29rpx;
+}
+.tip{
+  display: block;
+  font-size: 25rpx;
+  text-align: left;
+  color: #999;
+  line-height: 84rpx;
+  padding: 0 30rpx;
+}
+button{
+  background: #fff;
+  display: block;
+  font-size: 33rpx;
+  color: #fb870d;
+  height: 95rpx;
+  line-height: 95rpx;
+  border: 0;
+  border-radius: 0;
+  margin-top: 50rpx;
+  width: 100%;
+  border-color: red
+}

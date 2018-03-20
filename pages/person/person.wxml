@@ -1,0 +1,71 @@
+<!--pages/person/person.wxml-->
+<navigator url='./personInfo/personInfo'>
+  <view class='personTop'>
+    <view class='headImg'>
+      <image src='/img/avatar2.png'></image>
+    </view>
+    <view class='personInfo'>
+      <text class='name'>二月搞事情</text>
+      <image src='/img/icon_boy.png' class='sex'></image>
+      <text class='tel'>18321232123</text>
+    </view>
+    <image src='/img/icon_arrow.png' class='icon_arrow'></image>
+  </view>
+</navigator>
+<!-- <view class='myOrder border_bottom'>
+  <text class='fl'>我的订单</text>
+  <image src='/img/icon_arrow.png' class='fr'></image>
+  <text class='fr'>更多订单</text>
+</view>
+<view class='ul'>
+  <view class='li1'>
+    <image src='/img/icon_order1.png'></image>
+    <text>待提交</text>
+  </view>
+  <view class='li2'>
+    <image src='/img/icon_order2.png'></image>
+    <text>进行中</text>
+  </view>
+  <view class='li3'>
+    <image src='/img/icon_order3.png'></image>
+    <text>待评价</text>
+  </view>
+</view> -->
+<view class='m_top'>
+  <view class='link1 link'>
+    <image src='/img/icon_mine2.png'></image>
+    <view class='border_bottom'>我的优惠券
+      <image src='/img/icon_arrow.png'></image>
+    </view>
+  </view>
+  <navigator class='' url='./myaddr/myaddr' open-type='navigate'>
+    <view class='link2 link'>
+      <image src='/img/icon_min3.png'></image>
+      <view class='border_bottom'>我的地址
+        <image src='/img/icon_arrow.png'></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator class='' url='./bill/bill' open-type='navigate'>
+    <view class='link3 link'>
+      <image src='/img/icon_min6.png'></image>
+      <view class='border_bottom'>发票管理
+        <image src='/img/icon_arrow.png'></image>
+      </view>
+    </view>
+  </navigator>
+  <view class='link4 link'>
+    <image src='/img/icon_mine4.png'></image>
+    <view class='border_bottom'>我的购物车
+      <image src='/img/icon_arrow.png'></image>
+    </view>
+  </view>
+  <navigator url='./setting/setting'>
+    <view class='link5 link'>
+      <image src='/img/icon_mine5.png'></image>
+      <view>设置
+        <image src='/img/icon_arrow.png'></image>
+      </view>
+    </view>
+  </navigator>
+</view>

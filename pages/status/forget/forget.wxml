@@ -1,0 +1,30 @@
+<!--pages/status/forget/forget.wxml-->
+<!--pages/status/status/register.wxml-->
+<view class='register_wrap'>
+  <form>
+    <view class='register_item'>
+      <image src='/img/icon_phone.png'></image>
+      <view class='border_bottom'>
+        <input placeholder='请输入您的手机号' placeholder-class='placeholder_class' bindinput='bindKeyInput' type='number'></input>
+      </view>
+    </view>
+    <view class='register_item'>
+      <image src='/img/icon_password.png'></image>
+      <view class='border_bottom'>
+        <input placeholder='请输入验证码' placeholder-class='placeholder_class'></input>
+        <view class='capcha' bindtap='getCaptcha'>{{captcha}}</view>
+      </view>
+    </view>
+    <view class='register_item'>
+      <image src='/img/icon_password2.png'></image>
+      <view class='border_bottom'>
+        <input type='{{passwordType}}' placeholder='请输入密码' placeholder-class='placeholder_class'></input>
+        <image src='/img/icon_open.png' class='icon_eye' wx:if="{{isOpen}}" bindtap='toggleType'></image>
+        <image src='/img/icon_close.png' class='icon_eye' wx:else bindtap='toggleType'></image>
+      </view>
+    </view>
+
+    <button class='button' bindtap='goLogin'>完成</button>
+
+  </form>
+</view>

@@ -1,0 +1,117 @@
+/**index.wxss**/
+.indexSwiper{
+  width: 100%;
+  height:356rpx;
+}
+.indexSwiper image{
+  width: 100%;
+  height: 100%;
+}
+.top_addr{
+    height: 50rpx;
+    width: auto;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    margin-left: 30rpx;
+    border-radius: 25px;
+    border: #e2e0d7 solid 1px;
+    max-width: 260rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    top: 20rpx;
+    background: #8e8780;
+    line-height: 50rpx;
+}
+.top_addr image{
+  width: 20rpx;
+  height: 26rpx;
+  margin-right: 4rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12rpx;
+}
+.addr_text{
+  font-size: 25rpx;
+  color: #fff;
+  display: inline-block;
+  vertical-align: top;
+}
+.search_enter{
+    width: 342rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    background: #fff;
+    border-radius: 50px;
+    line-height: 50rpx;
+}
+.search_enter image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 22;
+}
+
+.search_tip{
+  font-size: 25rpx;
+  display: inline-block;
+  vertical-align: top;
+  color: #ccc;
+  position: relative;
+  z-index: 33;
+  text-indent: 60rpx;
+}
+.class_one{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #fff;
+}
+.spu{
+  width: 25%;
+  padding: 40rpx 0;
+  position: relative
+}
+.spu:before{
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  border-left: #e8e8e8 solid 1px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.spu:nth-of-type(4n):before{
+  display: none
+}
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+    .spu:before:after{
+        transform: scale(0.7)
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .spu:before:after{
+        transform: scale(0.5)
+    }
+}
+
+.spu image{
+  width: 85rpx;
+  height: 85rpx;
+  margin:0 auto;
+  display: block;
+}
+.spu text{
+  text-align: center;
+  display: block;
+  margin-top: 25rpx;
+}
+
+
+

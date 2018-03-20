@@ -1,0 +1,2 @@
+/* pages/person/myaddr/myaddr.wxss */
+@import "../../template/addr/myaddr.wxss"

@@ -1,0 +1,67 @@
+<!--pages/index/list/list.wxml-->
+<view class='sort_list border_right'>
+   <view class="sort_item {{_index == 1?'on':''}}" data-index = '1' bindtap='sortSwitch'>
+      <text>电路</text>
+   </view>
+   <view class="sort_item {{_index == 2?'on':''}}" data-index = '2' bindtap='sortSwitch'>
+      <text>开关插座安装维修</text>
+   </view>
+</view>
+<view class='sku_list'>
+  <view class='sku_detail border_bottom'>
+    <image src='/img/item1.png'></image>
+    <view class='sku_info' bindtap="skuDetail">
+      <text class='name ellipsis'>开关插座维修</text>
+      <text class='desc ellipsis2'>开关插座维修开关插座维修开关插座维修开关插座维修</text>
+      <text class='price'>￥0.01起</text>
+    </view>
+  </view>
+  <view class='sku_detail border_bottom'>
+    <image src='/img/item1.png'></image>
+    <view class='sku_info' bindtap="skuDetail">
+      <text class='name ellipsis'>开关插座维修</text>
+      <text class='desc ellipsis2'>开关插座维修开关插座维修开关插座维修开关插座维修</text>
+      <text class='price'>￥0.01起</text>
+    </view>
+  </view>
+  <view class='sku_detail border_bottom'>
+    <image src='/img/item1.png'></image>
+    <view class='sku_info' bindtap="skuDetail">
+      <text class='name ellipsis'>开关插座维修</text>
+      <text class='desc ellipsis2'>开关插座维修开关插座维修开关插座维修开关插座维修</text>
+      <text class='price'>￥0.01起</text>
+    </view>
+  </view>
+  <view class='sku_detail border_bottom'>
+    <image src='/img/item1.png'></image>
+    <view class='sku_info' bindtap="skuDetail">
+      <text class='name ellipsis'>开关插座维修</text>
+      <text class='desc ellipsis2'>开关插座维修开关插座维修开关插座维修开关插座维修</text>
+      <text class='price'>￥0.01起</text>
+    </view>
+  </view>
+  <view class='sku_detail border_bottom'>
+    <image src='/img/item1.png'></image>
+    <view class='sku_info' bindtap="skuDetail">
+      <text class='name ellipsis'>开关插座维修</text>
+      <text class='desc ellipsis2'>开关插座维修开关插座维修开关插座维修开关插座维修</text>
+      <text class='price'>￥0.01起</text>
+    </view>
+  </view>
+  <view class='sku_detail border_bottom'>
+    <image src='/img/item1.png'></image>
+    <view class='sku_info' bindtap="skuDetail">
+      <text class='name ellipsis'>开关插座维修</text>
+      <text class='desc ellipsis2'>开关插座维修开关插座维修开关插座维修开关插座维修</text>
+      <text class='price'>￥0.01起</text>
+    </view>
+  </view>
+  <view class='sku_detail border_bottom'>
+    <image src='/img/item1.png'></image>
+    <view class='sku_info' bindtap="skuDetail">
+      <text class='name ellipsis'>开关插座维修</text>
+      <text class='desc ellipsis2'>开关插座维修开关插座维修开关插座维修开关插座维修</text>
+      <text class='price'>￥0.01起</text>
+    </view>
+  </view>
+</view>

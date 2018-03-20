@@ -1,0 +1,41 @@
+<!--pages/person/billApply/billApply.wxml-->
+<form bindsubmit='billForm'>
+  <view class='top'>
+    <text class='title'>开具金额</text>
+    <text class='priceTxt'>3000</text>
+    <view class='border_top'>
+      <text>发票抬头</text>
+      <input placeholder-class='placeholder_class' placeholder='请输入'name="billHead"></input>
+    </view>
+    <view class='border_top'>
+      <text>纳税人识别号</text>
+      <input placeholder-class='placeholder_class' placeholder='请输入' name="billNum"></input>
+    </view>
+    <view class='border_top textarea '>
+      <text>备注</text>
+      <textarea placeholder-class='placeholder_class' placeholder='您可以将您的特殊需求告诉我们' name="billRemark"></textarea>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view>收票人信息</view>
+    <view class='font2 border_bottom'>姓名
+      <input placeholder='请输入' type='text' placeholder-class='placeholder_class' name="billName"></input>
+    </view>
+    <view class='font2 border_bottom'>手机号
+      <input placeholder='请输入' type='number' placeholder-class='placeholder_class' name="billTel"></input>
+    </view>
+    <view class='font2 border_bottom'>地址
+      <input placeholder='请选择' bindtap='lookmap' placeholder-class='placeholder_class' disabled class='select_addr' name="billAddr" value='{{addr}}'></input>
+    </view>
+    <view class='font2'>详细地址
+      <input placeholder='请输入您的详细地址' placeholder-class='placeholder_class' name="billAddrs"></input>
+    </view>
+  </view>
+  <view class='order_btn'>
+    <button form-type='submit'>确认无误，提交</button>
+  </view>
+</form>
+<view class='tip'>
+  <text class='text'>温馨提示</text>
+  <text>1、大大大大分开了收到了见附件冻死了空间激烈的时刻门店数靠你了的十六年放了看电视麻烦了没得事啦买房来多少麻烦了买定离手南方了第三发了。</text>
+</view>

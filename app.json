@@ -1,0 +1,62 @@
+{
+  "pages":[
+    "pages/person/bill/bill",
+    "pages/person/billApply/billApply",
+    "pages/person/orderTrack/orderTrack",
+    "pages/person/orderState/orderState",
+    "pages/person/evaluate/evaluate",
+    "pages/ceshi/ceshi",
+    "pages/ceshi1/ceshi1",
+    "pages/index/index",
+    "pages/person/billDetail/billDetail",
+    "pages/status/forget/forget",
+    "pages/person/xgpassword/xgpassword",
+    "pages/person/account/account",
+    "pages/person/setting/setting",
+    "pages/person/person",
+    "pages/person/editAddr/editAddr",
+    "pages/person/newAddr/newAddr",
+    "pages/person/myaddr/myaddr",
+    "pages/person/nickname/nickname",
+    "pages/person/personInfo/personInfo",
+    "pages/orderList/orderList",
+    "pages/status/login/login",
+    "pages/index/order/order",
+    "pages/index/detail/detail",
+    "pages/status/register/register",
+    "pages/index/search/search",
+    "pages/person/orderList/orderList",
+    "pages/index/list/list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "万能小哥",
+    "navigationBarTextStyle":"light"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#fb870d",
+    "backgroundColor":"#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/icon_index.png",
+        "selectedIconPath":"img/icon_index1.png"
+      },
+      {
+        "pagePath": "pages/orderList/orderList",
+        "text": "订单",
+        "iconPath": "img/icon_order1.png",
+        "selectedIconPath": "img/icon_order1.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "img/icon_my.png",
+        "selectedIconPath": "img/icon_my1.png"
+      }
+    ]
+  }
+}

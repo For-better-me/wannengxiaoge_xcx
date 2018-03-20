@@ -1,0 +1,28 @@
+<!--pages/person/myaddr/myaddr.wxml-->
+<template name="addr">
+  <view >
+    <view class='info'>
+      <text class='name font2'>{{name}}</text>
+      <text class='tel font2'>{{tel}}</text>
+      <view class='addr font3'>
+        <text>{{addr}}</text>
+      </view>
+      <view class='border_top do'>
+        <view class='choose'>
+          <radio color='#fb870d' data-index="{{index}}" checked='{{check}}' bindtap='isChoose'></radio>默认地址
+        </view>
+        <view>
+          <view class='delete' bindtap='deleteThis' data-index="{{index}}">
+            <image src='/img/icon_delete.png'></image>
+            <text>删除</text>
+          </view>
+          <view class='edit' bindtap='editThis' data-index="{{index}}" >
+            <image src='/img/icon_edit.png'></image>
+            <text>编辑</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+ 
+</template>

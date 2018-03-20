@@ -1,0 +1,121 @@
+<!--pages/person/orderState/orderState.wxml-->
+<!-- 状态 -->
+<view class='main_color stateTitle'>维修完成，待付款</view>
+<!--订单跟踪  -->
+<navigator url='../orderTrack/orderTrack'>
+  <view class='warper'>
+    订单跟踪
+    <text class='fr'>2017-05-30  14:30   维修完成待付款</text>
+    <image src='/img/icon_arrow.png'></image>
+  </view>
+</navigator>
+<!--联系小哥  -->
+<view class='callXG'>
+  <view class='xgHead fl'>
+    <image src='/img/avatar.png'></image>
+  </view>
+  <view class='xgInfo fl'>
+    <view class='info'>
+      <text class='xgName'>马云</text>
+      <image class='xgGimg' src='/img/icon_super.png'></image>
+      <text class='xgGrade'>铜牌小哥</text>
+    </view>
+    <view class='star'>
+      <image class='iconStar' src='/img/icon_star.png'></image>
+      <image class='iconStar' src='/img/icon_star.png'></image>
+      <text>5.0分</text> </view>
+  </view>
+  <view class='tel fr' bindtap='callXG'>
+    <image src='/img/icon_call.png'></image>
+  </view>
+</view>
+<!-- 跟踪地图  -->
+<view class='map'>
+  <map></map>
+</view>
+<!--订单信息  -->
+<view class='sameHeight orderMsg'>订单信息
+  <image class='icon_arrow fr' src='/img/icon_arrow.png'></image>
+</view>
+<!--维修信息  -->
+<view class='repairInfo'>
+  <text class='title'>维修信息</text>
+  <view>维修类目
+    <text>马桶疏通：非拆卸，手动疏通</text>
+  </view>
+  <view class='border_top'>维修数量
+    <text>x1</text>
+  </view>
+  <view class='border_top'>维修地址
+    <text>李二  15612345678</text>
+    <text>石家庄市新华区中储广场A座17层，万能小哥</text>
+  </view>
+  <view class='border_top'>上门时间
+    <text>2017-07-20  15:30</text>
+  </view>
+  <view class='border_top'>预付费
+    <text class='main_color'>￥30</text>
+  </view>
+</view>
+<!--维修费用  -->
+<view class='repair' >
+  <view class='sameHeight repairCost' bindtap='toggle2'>维修费用
+    <image src="{{toggleimg}}"></image>
+    <text class='main_color fr'>￥888</text>
+  </view>
+  <view wx:if="{{toggle}}">
+    <view class='sameHeight2 border_top'>人工费
+      <text class='main_color fr'>￥80</text>
+    </view>
+    <view class='sameHeight2 border_top'>材料费
+      <text class='main_color fr'>￥80</text>
+    </view>
+    <view class='cost'>
+      <view>
+        <text class='fl'>马桶盖子</text>
+        <text class='fr'>￥100</text>
+      </view>
+      <view>
+        <text class='fl'>马桶盖子</text>
+        <text class='fr'>￥100</text>
+      </view>
+    </view>
+    <view class='sameHeight2 border_top'>附加费
+      <text class='main_color fr'>￥80</text>
+    </view>
+    <view class='cost'>
+      <view>
+        <text class='fl'>马桶盖子</text>
+        <text class='fr'>￥100</text>
+      </view>
+      <view>
+        <text class='fl'>马桶盖子</text>
+        <text class='fr'>￥100</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!--优惠券  -->
+<view class='sameHeight coupon'>优惠券
+  <image class='icon_arrow fr' src='/img/icon_arrow.png'></image>
+  <text class='fr'>暂无可用优惠券</text>
+</view>
+<!--维修记录  -->
+<view class='repairRecord'>
+  <view class='tit'>维修记录</view>
+  <text>小哥师父可以把维修过程记录在此处。小哥师父可以把维修过程记录在此处。</text>
+  <view class='imgBox'>
+    <view>
+      <image src='/img/order_pic.png'></image>
+    </view>
+    <view>
+      <image src='/img/order_pic.png'></image>
+    </view>
+  </view>
+</view>
+
+<!--立即支付  -->
+<view class='pay border_top'>
+  <text class='main_color'>共计：￥880</text>
+  <button class='fr'>立即支付</button>
+</view>

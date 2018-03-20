@@ -1,0 +1,43 @@
+/* pages/person/editAddr/editAddr.wxss */
+.form{
+  font-size: 27rpx;
+  padding-left: 30rpx;
+  background: #fff; 
+  overflow: hidden
+}
+.form view{
+  overflow: hidden;
+  min-height: 90rpx;
+}
+.form view text{
+  width: 20%;
+  float: left;
+  margin-top: 29rpx;
+}
+.form view input{
+ min-width: 70%;
+  float: left;
+  margin-top: 20rpx;
+}
+.form view textarea{
+  max-width: 70%;
+  float: left;
+  margin-top: 28rpx;
+  line-height: 160%;
+  height: 90rpx;
+}
+.form view image{
+  width: 12rpx;
+  height: 21rpx;
+  float: right;
+  margin-top: 34rpx;
+  margin-right: 30rpx;
+}
+.submit {
+  background: #fff;
+  margin-top: 50rpx;
+  color: #fb870d;
+  font-size: 31rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+}

@@ -1,0 +1,65 @@
+<!--pages/person/evaluate/evaluate.wxml-->
+<!--评价  -->
+<form bindsubmit='evalForm'>
+  <view class='skuname'>马桶疏通：非拆卸，手动疏通</view>
+  <view class='z-content'>
+    <view class='border_bottom'>
+      <text class='z-title'>总体评价：</text>
+      <label class="{{_index == 1?'changeColor':''}}" bindtap='select' data-index='1' >
+        <image src='{{_index == 1?goodPicUrl2:goodPicUrl1}}'></image> 好评</label>
+      <label class="{{_index == 2?'changeColor':''}}" bindtap='select' data-index='2'>
+        <image src='{{_index == 2?sosoPicUrl2:sosoPicUrl1}}'></image> 中评</label>
+      <label class="{{_index == 3?'changeColor':''}}" bindtap='select' data-index='3'>
+        <image src='{{_index == 3?poorPicUrl2:poorPicUrl1}}'></image> 差评</label>
+    </view>
+    <textarea  name='textarea' placeholder='发表有内容的评价，有现金红包哦！' class='border_bottom' maxlength='100'></textarea>
+    <text>{{0}}/100</text>
+  </view>
+  <view class='f-content'>
+    <text class='f-title'>服务评价</text>
+    <view>
+      <text>接单速度</text>
+      <image src="{{0<=starArr[0]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '0' data-parentIndex = '0'></image>
+      <image src="{{1<=starArr[0]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '1' data-parentIndex = '0'></image>
+      <image src="{{2<=starArr[0]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '2' data-parentIndex = '0'></image>
+      <image src="{{3<=starArr[0]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '3' data-parentIndex = '0'></image>
+      <image src="{{4<=starArr[0]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '4' data-parentIndex = '0'></image>
+      <text>{{commentArr[starArr[0]]}}</text>
+    </view>
+    <view>
+      <text>仪表仪容</text>
+      <image src="{{0<=starArr[1]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '0' data-parentIndex = '1'></image>
+      <image src="{{1<=starArr[1]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '1' data-parentIndex = '1'></image>
+      <image src="{{2<=starArr[1]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '2' data-parentIndex = '1'></image>
+      <image src="{{3<=starArr[1]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '3' data-parentIndex = '1'></image>
+      <image src="{{4<=starArr[1]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '4' data-parentIndex = '1'></image>
+      <text>{{commentArr[starArr[1]]}}</text>
+    </view>
+    <view>
+      <text>服务态度</text>
+      <image src="{{0<=starArr[2]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '0' data-parentIndex = '2'></image>
+      <image src="{{1<=starArr[2]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '1' data-parentIndex = '2'></image>
+      <image src="{{2<=starArr[2]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '2' data-parentIndex = '2'></image>
+      <image src="{{3<=starArr[2]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '3' data-parentIndex = '2'></image>
+      <image src="{{4<=starArr[2]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '4' data-parentIndex = '2'></image>
+      <text>{{commentArr[starArr[2]]}}</text>
+    </view>
+    <view>
+      <text>专业程度</text>
+      <image src="{{0<=starArr[3]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '0' data-parentIndex = '3'></image>
+      <image src="{{1<=starArr[3]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '1' data-parentIndex = '3'></image>
+      <image src="{{2<=starArr[3]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '2' data-parentIndex = '3'></image>
+      <image src="{{3<=starArr[3]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '3' data-parentIndex = '3'></image>
+      <image src="{{4<=starArr[3]?starSlecte:starNormal}}" bindtap="changeColor" data-index = '4' data-parentIndex = '3'></image>
+      <text>{{commentArr[starArr[3]]}}</text>
+    </view>
+    <view class='border_top showname'>
+      <label class="{{isAnonymous?'changeColor':''}}" bindtap='isAnonymous'><image src="{{isAnonymous?anonymous2:anonymous1}}" ></image>{{isAnonymous?'匿名':'不匿名'}}</label>
+      <text>您的评价将以{{isAnonymous?'匿名':'不匿名'}}形式展现</text>
+    </view>
+  </view>
+  
+  <view class='order_btn'>
+    <button form-type='submit'>提交评价</button>
+  </view>
+</form>

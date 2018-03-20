@@ -1,0 +1,44 @@
+<!--pages/person/bill/bill.wxml-->
+<view class='navigationBar'>
+  <text class="{{ selected?'showColor':'default'}}" bindtap='selected'>可申请</text>
+  <text class="{{ selected1?'showColor':'default'}}" bindtap='selected1'>已申请</text>
+</view>
+<view class="{{selected?'show':'hidden'}}">
+  <view class='lists'>
+    <view class='list' wx:for="{{billList}}" wx:for-index="idx" >
+      <text class='name border_bottom'>{{item.spu}}</text>
+      <view class='msg'>
+        <radio color='#fb870d' data-index="{{idx}}" checked='{{flagArr[idx]}}' bindtap='isChoose'></radio>
+        <view class='billImg'>
+          <image src='/img/shopcar.png'></image>
+        </view>
+        <view class='info'>
+          <text>订单编号：{{item.code}}</text>
+          <text class='infoName'>{{item.sku}}</text>
+          <text class='priceTxt'>{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='order_btn'>
+    <button bindtap='goApply'>立即申请</button>
+  </view>
+</view>
+<view class="{{selected1?'show':'hidden'}}">
+  <view class='lists'>
+    <view class='already'>
+      <image src='/img/bill.png' ></image>
+      <view class='tip'>
+        <text class='fl'>申请金额</text>
+        <text class='fr main_color'>处理中</text>
+      </view>
+      <view class='time'>
+        <text>2017-05-25 13:20:50</text>
+      </view>
+      <view class='priceT'>
+        <text class='priceTxt big_74'>3000</text>
+      </view>
+       <navigator url='../billDetail/billDetail'  class='border_top font3' >查看详情</navigator>
+    </view>
+  </view>
+</view>

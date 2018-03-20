@@ -1,0 +1,60 @@
+<!--pages/index/order/order.wxml-->
+<view class='buyer_info'>
+  <view class='buyer_addr border_bottom'>
+    <image src='/img/icon_addr2.png' class='icon_addr'></image>
+    <view class='buyer_addr_wrap'>
+      <text>石家庄市新华区中储广场A座17层，万能小哥...</text>
+      <text>李二     15612345678</text>
+    </view>
+    <image src='/img/icon_arrow.png' class='icon_arrow'></image>
+  </view>
+  <view class='come_time'>
+    <picker mode="multiSelector" bindchange="timePickerChange" bindcolumnchange="timeColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <image src='/img/icon_time.png' class='icon_time'></image>
+      <view class='choose_time'>上门时间
+        <text>{{comingTime}}</text>
+        <image src='/img/icon_arrow.png' class='icon_arrow'></image>
+      </view>
+    </picker>
+  </view>
+</view>
+<view class='buyer_fix'>
+  <view class='font border_bottom'>维修类目
+    <text class='fr font3'>其它灯具安装：其它灯具安装</text>
+  </view>
+  <view class='font border_bottom'>维修数量
+    <text class='fr font3'>X1</text>
+  </view>
+  <view class='font'>维修费
+    <text class='fr font3 main_color'>￥200</text>
+  </view>
+</view>
+<view class='desc_question'>
+  <view class='wrap'>
+    <text class='font'>问题描述</text>
+    <textarea maxlength='200' auto-height='true' placeholder='您可以将您需要维修的具体情况描述在此处。可以让小哥更好的为您提供服务。最多输入200字符' placeholder-class='placeholder_class'></textarea>
+    <view class='upload'>
+      <view class="btn_upload" wx:for='{{imageArray}}' wx:for-item='item' wx:for-index='index'>
+        <image class='close_img' src='/img/guanbi_shanchu.png' bindtap='deleteImg' data-index='{{index}}'></image>
+        <image src='{{item}}' bindtap='preview' data-src='{{item}}'></image>
+      </view>
+      <view wx:if='{{btnFlag}}' class='btn_upload' bindtap='addPic'>
+        <image src='/img/tianjia.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='warm_tip'>
+  <view class='wrap'>
+    <text class='font'>温馨提示</text>
+    <view class='tip_con'>
+      <text>1、价格为面议的维修服务需支付预付费30元</text>
+      <text>2、固定价格的服务需预付全款，维修过程中师傅不会以任何形式向您索要其他费用。</text>
+      <text>3、维修师傅出发后，用户原因取消订单，用户将支付维修人员上门费用30元，面议价格服务不退换预付费；固定价格服务将退还扣除预付费部分。</text>
+      <text>4、万能小哥均为用户免费提供家具维修保障险，并且提供72小时质保服务。</text>
+    </view>
+  </view>
+</view>
+<view class='order_btn'>
+  <button>提交订单</button>
+</view>

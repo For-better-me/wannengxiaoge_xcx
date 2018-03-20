@@ -1,0 +1,2 @@
+<!--pages/person/account/account.wxml-->
+<navigator url='../xgpassword/xgpassword'>修改密码 <image src='/img/icon_arrow.png'></image></navigator>

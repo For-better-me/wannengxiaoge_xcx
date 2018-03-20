@@ -1,0 +1,66 @@
+/* pages/person/personInfo/personInfo.wxss */
+.top,.bottom{
+  background: #fff;
+  overflow: hidden;
+}
+.top image,.bottom image{
+  float: right;
+  width: 12rpx;
+  height: 21rpx;
+  margin-right: 30rpx;
+}
+.top .headImg{
+  width: 100rpx;
+  height: 100rpx;
+  float: right;
+  margin: 30rpx 40rpx;
+  border-radius: 50%;
+  overflow: hidden
+}
+.top .headImg image{
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+}
+.top text{
+  display: inline-block;
+  font-size: 29rpx;
+  margin-top: 8%;
+  margin-left: 30rpx;
+  color: #1a1a1a;
+}
+.top .icon{
+  margin-top: 10%;
+}
+.bottom{
+  margin-top: 20rpx;
+}
+.bottom view{
+  font-size: 27rpx;
+  line-height: 100rpx;
+  margin-left: 30rpx;
+}
+.bottom view text{
+  float: right;
+  margin-right: 20rpx;
+}
+.bottom image{
+  margin-top: 5.8%;
+}
+
+.chooseSex{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.chooseSex text{
+  background: #fff;
+  display: block;
+  text-align: center;
+  font-size: 29rpx;
+  height: 112rpx;
+  line-height: 112rpx;
+}
+.chooseSex .cancel{
+  margin-top: 20rpx;
+}
