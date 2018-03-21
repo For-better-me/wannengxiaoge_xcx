@@ -14,8 +14,8 @@ const api = {
     
         },
         index: { // 首页模块接口
-            all_citys: `${onLineBaseUrl}/ws/user/all_citys`,
-            ad_info: `${onLineBaseUrl}/ws/user/ad_info/{typeCode}/{cityCode}`,
+            all_citys: `${onLineBaseUrl}/ws/user/all_citys`, // 查询已开通的区域
+            ad_info: `${onLineBaseUrl}/ws/user/ad_info/{typeCode}/{cityCode}`, // 用户端banner图查询接口
         }
     },
     pro: {// 生产环境

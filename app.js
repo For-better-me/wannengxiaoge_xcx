@@ -20,6 +20,13 @@ App({
         console.log(res)
       }
     })
+    this.request({
+      url: this.$api.index.ad_info,
+      data: {typeCode: 'user_banner', cityCode: '130100'},
+      success: res => {
+        console.log(res)
+      }
+    })
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -155,9 +162,12 @@ App({
       opt.data = util.queryStringToObject(opt.data)
 
       // 格式化接口地址
-      opt.url.match(/{.*?}/g).forEach(item => {
-        opt.url = opt.url.replace(new RegExp(item), opt.data[item.replace(/[{}]/g, '')])
-      })
+      let apiParams = opt.url.match(/{.*?}/g)
+      if (apiParams) {
+        apiParams.forEach(item => {
+          opt.url = opt.url.replace(new RegExp(item), opt.data[item.replace(/[{}]/g, '')])
+        })
+      }
 
       //防止按钮多次提交
       if (opt.button && this.globalData.isRequest) {
