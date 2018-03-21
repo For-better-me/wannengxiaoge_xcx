@@ -14,7 +14,8 @@ App({
   requestStack: [], // 请求栈，防止同时执行多条查询
   onLaunch: function () {
     this.request({
-      url: this.$api.index.all_citys,
+      url: this.$api.index.ad_info,
+      data: {typeCode: 'user_banner', cityCode: '130100'},
       success: res => {
         console.log(res)
       }
@@ -140,17 +141,23 @@ App({
         encodingType: '1', // 返回值编码 1 UTF8
         origin: '1', // 来源 1 用户 | 2 Android小哥 | 3 IOS小哥 | 4 商户 | 5 经销商 | 6 Ios用户 | 7 Android用户
         signType: '1', // 签名方式 1 md5
-        signKey: 'user000011111111', // 加密的key
         ...opt.data,
+        signKey: 'user000011111111', // 加密的key
       }
+
       let queryString = ''
       for (let key in _queryString) {
         queryString += (queryString != '' ? '&' : '') + `${key}=${_queryString[key]}`
       }
+      console.log(666, queryString)
       let queryStirngMd5 = md5(queryString).toUpperCase()
       opt.data = queryString.replace(/signKey=(.*)$/, `signData=${queryStirngMd5}`)
       opt.data = util.queryStringToObject(opt.data)
 
+      // 格式化接口地址
+      opt.url.match(/{.*?}/g).forEach(item => {
+        opt.url = opt.url.replace(new RegExp(item), opt.data[item.replace(/[{}]/g, '')])
+      })
 
       //防止按钮多次提交
       if (opt.button && this.globalData.isRequest) {
