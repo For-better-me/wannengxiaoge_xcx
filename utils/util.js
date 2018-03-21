@@ -21,6 +21,7 @@ function count(_type, count) {
   }
   return _count;
 }
+
 // 格式个位数字
 function format(num) {
   if (num < 10) {
@@ -28,6 +29,7 @@ function format(num) {
   }
   return num;
 }
+
 //返回年
 function returnYear(){
   const date = new Date();
@@ -37,6 +39,7 @@ function returnYear(){
   }
   return years
 }
+
 //返回月
 function returnMonth(){
   const months = [];
@@ -46,6 +49,7 @@ function returnMonth(){
   return months;
 }
 const hourAll = ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00', '15:30', '16:00','16:30','17:00','17:30','18:00','18:30','19:00','19:30', '20:00'];
+
 //获取上门时间
 function getComingTime() {
   var currentTime = new Date();
@@ -180,11 +184,40 @@ function getComingTime() {
   // }
   return timeData;
 }
+
+// 合并对象
+function merge(target) {
+  for (let i = 1, j = arguments.length; i < j; i++) {
+    let source = arguments[i] || {}
+    for (let prop in source) {
+      if (source.hasOwnProperty(prop)) {
+        let value = source[prop]
+        if (value !== undefined) {
+          target[prop] = value
+        }
+      }
+    }
+  }
+  return target
+}
+
+// 查询字符串转对象
+function queryStringToObject (queryString) {
+  let a = queryString.split(/[&=]/g)
+  let result = {}
+  while (a.length) {
+    result[a.shift()] = a.shift()
+  }
+  return result
+}
+
 module.exports = {
-  isPhone: isPhone,
-  count: count,
-  getComingTime: getComingTime,
-  hourAll: hourAll,
-  returnYear: returnYear,
-  returnMonth: returnMonth
+  isPhone,
+  count,
+  getComingTime,
+  hourAll,
+  returnYear,
+  returnMonth,
+  merge,
+  queryStringToObject
 }

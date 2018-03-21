@@ -1,13 +1,12 @@
 {
   "pages":[
+    "pages/index/index",
+    "pages/status/login/login",
     "pages/person/bill/bill",
     "pages/person/billApply/billApply",
     "pages/person/orderTrack/orderTrack",
     "pages/person/orderState/orderState",
     "pages/person/evaluate/evaluate",
-    "pages/ceshi/ceshi",
-    "pages/ceshi1/ceshi1",
-    "pages/index/index",
     "pages/person/billDetail/billDetail",
     "pages/status/forget/forget",
     "pages/person/xgpassword/xgpassword",
@@ -20,7 +19,6 @@
     "pages/person/nickname/nickname",
     "pages/person/personInfo/personInfo",
     "pages/orderList/orderList",
-    "pages/status/login/login",
     "pages/index/order/order",
     "pages/index/detail/detail",
     "pages/status/register/register",

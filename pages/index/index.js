@@ -18,7 +18,7 @@ Page({
     interval: 3000,
     duration: 1000,
     region: ['广东省', '广州市', '海珠区']
-  
+
   },
 
   onLoad: function () {
