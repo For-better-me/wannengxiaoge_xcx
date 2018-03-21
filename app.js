@@ -270,7 +270,6 @@ App({
     wx.setStorageSync('province', userInfo.province)
     wx.setStorageSync('city', userInfo.city)
   },
-  $md5: md5, // 注册md5加密
   $api: ENV == "dev" ? api.dev : api.pro, //接口定义
   globalData: {
     userInfo: null
