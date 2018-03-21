@@ -15,37 +15,61 @@ App({
     }
   },
   onLaunch: function () {
-    this.request({
-      url: this.$api.index.ad_info,
-      data: {typeCode: 'user_banner', cityCode: '130100'},
-      success: res => {
-        console.log(1,res)
-      }
-    })
+    // this.request({
+    //   url: this.$api.index.ad_info,
+    //   data: {typeCode: 'user_banner', cityCode: '130100'},
+    //   success: res => {
+    //     console.log(1,res)
+    //   }
+    // })
 
-    this.request({
-      url: this.$api.index.ad_info,
-      data: {typeCode: 'user_banner', cityCode: '130100'},
-      success: res => {
-        console.log(2,res)
-      }
-    }, false)
+    // this.request({
+    //   url: this.$api.index.all_citys,
+    //   success: res => {
+    //     console.log(2,res)
+    //   }
+    // })
 
-    this.request({
-      url: this.$api.index.ad_info,
-      data: {typeCode: 'user_banner', cityCode: '130100'},
-      success: res => {
-        console.log(3,res)
-      }
-    })
+    // this.getUserInfo(res => {
+    //   console.log(res)
+    // })
 
-    this.request({
-      url: this.$api.index.ad_info,
-      data: {typeCode: 'user_banner', cityCode: '130100'},
-      success: res => {
-        console.log(4,res)
-      }
-    })
+    // this.request({
+    //   url: this.$api.person.problems,
+    //   method: 'POST',
+    //   data: {name: '马桶', isHot: 2, pageSize: 10},
+    //   success: res => {
+    //     console.log(3,res)
+    //   }
+    // })
+
+    // this.request({
+    //   url: this.$api.person.serverTypeList,
+    //   data: {cityCode: '110101', serviceId: 0},
+    //   success: res => {
+    //     console.log(4,res)
+    //   }
+    // })
+
+
+    // wx.chooseAddress({
+    //   success: res => {
+    //     console.log('aaaaaaaaa',res)
+    //   }
+    // })
+
+    // wx.getLocation({
+    //   type: 'gcj02',
+    //   success: res => {
+    //     var latitude = res.latitude
+    //     var longitude = res.longitude
+    //     // wx.openLocation({
+    //     //   latitude: latitude,
+    //     //   longitude: longitude,
+    //     //   scale: 5
+    //     // })
+    //   }
+    // })
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -271,33 +295,41 @@ App({
       console.error('回调函数必须为函数')
     }
   },
-  getUserInfo(success, fail) {
+  getUserInfo(success, fail, force=true) {
     //获取用户信息
     let self = this
 
     function openSetting(success) {
       wx.openSetting({
         success: res => {
+          console.log(res,222222)
           if (res.authSetting["scope.userInfo"]) {
             self.getUserInfo(success)
           } else {
+            // 用户设置后依然为拒绝状态
             openSetting(success)
           }
         },
         fail: res => {
-          openSetting(success)
+          // 拒绝获取用户信息
+          if (force) {
+            openSetting(success)
+          }
         }
       })
     }
 
     wx.getUserInfo({
+      lang: 'zh_CN',
       success: res => {
         this.cacheUserInfo(res.userInfo)
         success(res)
       },
       fail: res => {
-        //拒绝获取用户信息
-        openSetting(success)
+        // 拒绝获取用户信息
+        if (force) {
+          openSetting(success)
+        }
       }
     })
   },

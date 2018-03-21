@@ -1,4 +1,6 @@
 // pages/person/person.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -12,7 +14,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    app.request({
+      url: app.$api.person.all_citys,
+      data: {name: 'zhangsan'},
+      success: res => {
+        console.log('sssssssssssss',res)
+      }
+    })
+
+    app.request({
+      url: app.$api.person.serverTypeList,
+      data: {cityCode: '110101', serviceId: 0},
+      success: res => {
+        console.log('zzzzzzzzzzz', res)
+      }
+    })
   },
 
   /**

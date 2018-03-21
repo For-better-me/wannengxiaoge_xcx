@@ -8,7 +8,9 @@
 const api = {
     dev: { // 开发环境
         person: { // 用户中心模块接口
-            
+            all_citys: `${onLineBaseUrl}/ws/user/all_citys`,
+            problems: `${onLineBaseUrl}/ws/user/problems`, // 常见问题
+            serverTypeList: `${onLineBaseUrl}/ws/user/service_type/{cityCode}/{serviceId}`, // 服务类型列表
         },
         orderList: { // 订单模块接口
     
