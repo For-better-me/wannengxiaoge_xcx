@@ -2,7 +2,10 @@
 const util = require('./utils/util.js')
 const md5 = require('./utils/md5.js')
 const api = require('./utils/api.js')
+const config = require('./utils/config.js')
 const ENV = 'dev' // 开发环境配置 dev开发环境  pro生产环境
+
+let requestQueue = [] // 请求队列，防止同时执行多条查询
 
 App({
   deBug: true, // 是否调试模式
@@ -11,20 +14,36 @@ App({
       console[type](msg)
     }
   },
-  requestStack: [], // 请求栈，防止同时执行多条查询
   onLaunch: function () {
     this.request({
       url: this.$api.index.ad_info,
       data: {typeCode: 'user_banner', cityCode: '130100'},
       success: res => {
-        console.log(res)
+        console.log(1,res)
       }
     })
+
     this.request({
       url: this.$api.index.ad_info,
       data: {typeCode: 'user_banner', cityCode: '130100'},
       success: res => {
-        console.log(res)
+        console.log(2,res)
+      }
+    }, false)
+
+    this.request({
+      url: this.$api.index.ad_info,
+      data: {typeCode: 'user_banner', cityCode: '130100'},
+      success: res => {
+        console.log(3,res)
+      }
+    })
+
+    this.request({
+      url: this.$api.index.ad_info,
+      data: {typeCode: 'user_banner', cityCode: '130100'},
+      success: res => {
+        console.log(4,res)
       }
     })
 
@@ -34,11 +53,11 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    // wx.login({
+    //   success: res => {
+    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //   }
+    // })
     // 获取用户信息
     // wx.getSetting({
     //   success: res => {
@@ -135,28 +154,38 @@ App({
       }
     })
   },
-  request(requestOpt) {
-    // 封装request请求
-    // 逐个调用请求栈，防止同时执行多条查询
-    this.requestStack.push(requestOpt)
-    this.runRequestStack(this.requestStack[0])
+  request(requestOpt, queue=true) {
+    /**
+     * 封装request请求
+     * 默认逐个调用请求队列，防止同时执行多条查询
+     * 如果传第二个参数为false则不加入队列，马上执行
+     */
+    if (queue) {
+      requestOpt.queue = true
+      requestQueue.push(requestOpt)
+    } else {
+      this.runRequestStack(requestOpt)
+    }
+    if (!requestQueue.isRequest && requestQueue.length > 0) {
+      requestQueue.isRequest = true
+      this.runRequestStack(requestQueue.shift())
+    }
   },
   runRequestStack(opt) {
     //this.checkLogin(() => {
       // 封装公共入参 和 接口入参
       let _queryString = {
-        encodingType: '1', // 返回值编码 1 UTF8
-        origin: '1', // 来源 1 用户 | 2 Android小哥 | 3 IOS小哥 | 4 商户 | 5 经销商 | 6 Ios用户 | 7 Android用户
-        signType: '1', // 签名方式 1 md5
+        encodingType: config.encodingType, // 返回值编码 1 UTF8
+        origin: config.origin, // 来源 1 用户 | 2 Android小哥 | 3 IOS小哥 | 4 商户 | 5 经销商 | 6 Ios用户 | 7 Android用户
+        signType: config.signType, // 签名方式 1 md5
         ...opt.data,
-        signKey: 'user000011111111', // 加密的key
+        signKey: config.signKey, // 加密的key
       }
 
       let queryString = ''
       for (let key in _queryString) {
         queryString += (queryString != '' ? '&' : '') + `${key}=${_queryString[key]}`
       }
-      console.log(666, queryString)
       let queryStirngMd5 = md5(queryString).toUpperCase()
       opt.data = queryString.replace(/signKey=(.*)$/, `signData=${queryStirngMd5}`)
       opt.data = util.queryStringToObject(opt.data)
@@ -175,7 +204,6 @@ App({
         return
       }
 
-      this.globalData.isRequest = true
       ////const sessionid = wx.getStorageSync('sessionid')
       ////opt.data.sessionId = sessionid
 
@@ -198,12 +226,6 @@ App({
         method: opt.method,
         data: opt.data,
         success: res => {
-          // 删除本次回调栈
-          this.requestStack.splice(0, 1)
-          if (this.requestStack.length != 0) {
-            // 如果回调栈还有回调，继续执行
-            this.runRequestStack(this.requestStack[0])
-          }
           if (res.data.err == 101) {
             // 后台未登录或登录超时
             this._log('后台未登录或登录超时')
@@ -223,17 +245,16 @@ App({
             this.runCallback(opt.success, res)
           }
         },
-        fail: (res) => {
-          // 删除本次回调栈
-          this.requestStack.splice(0, 1)
-          if (this.requestStack.length != 0) {
-            // 如果回调栈还有回调，继续执行
-            this.runRequestStack(this.requestStack[0])
-          }
-        },
         complete: res => {
+          if (opt.queue) {
+            if (requestQueue.length != 0) {
+              // 如果回调栈还有回调，继续执行
+              this.runRequestStack(requestQueue.shift())
+            } else {
+              requestQueue.isRequest = false
+            }
+          }
           setTimeout(() => {
-            this.globalData.isRequest = false
             if (opt.loading) {
               wx.hideLoading()
             }
