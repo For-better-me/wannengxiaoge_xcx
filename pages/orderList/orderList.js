@@ -1,21 +1,55 @@
 // pages/person/orderList/orderList.js
-Page({
+//获取应用实例
+const app = getApp()
+const util = require('../../utils/util.js')
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
-    _index : 1
-    
+    _index: 1,
+    data: [], // 订单列表
+    pageSize: 10,
+    currentPage: 1,
+    totalRecord: null,
+    totalPage: null,
   },
-  selected: function (e) {
+  selected (e) { // 选择订单类型
     this.setData({
       _index : e.currentTarget.dataset.index
     })
+    this.getOrderList()
   },
-  orderDetail:function(){
+  orderDetail (e) {
+    let orderid = e.currentTarget.dataset.orderid
     wx.navigateTo({
-      url: '../person/orderState/orderState',
+      url: `/pages/person/orderState/orderState?orderid=${orderid}`,
+    })
+  },
+  getOrderList () {
+    // 获取订单列表
+    app.request({
+      url: app.$api.order.my_orders,
+      data: {
+        status: this.data._index,
+        pageSize: 10,
+        currentPage: 1
+      },
+      success: res => {
+        if (res.data.result == 1) {
+          res.data.data = res.data.data.map(item => {
+            item.downTime = util.dateFtt('yyyy-MM-dd hh:mm:ss', new Date(item.downTime))
+            item.appointedTime = util.dateFtt('yyyy-MM-dd hh:mm:ss', new Date(item.appointedTime))
+            return item
+          })
+          this.setData({
+            ...res.data
+          })
+        } else {
+          wx.showToast({
+            title: res.data.desc,
+            icon:'none'
+          })
+        }
+      }
     })
   },
 
@@ -23,7 +57,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(getCurrentPages())
+    // 获取订单列表
+    this.getOrderList()
   },
 
   /**

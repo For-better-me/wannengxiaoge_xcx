@@ -6,6 +6,7 @@
   left: 0;
   right: 0;
   top: 0;
+  z-index: 10;
 }
 .head text{
   display: block;
@@ -109,3 +110,7 @@
 .margin_top_10{
   margin-top: 10rpx;
 }
+
+.no_order{text-align: center; padding-top: 44%;}
+.no_order image{width: 158rpx; height: 163rpx;}
+.no_order text{display: block; margin-top: 30rpx; font-size: 28rpx;}

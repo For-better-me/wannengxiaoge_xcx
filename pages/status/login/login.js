@@ -1,6 +1,8 @@
 // pages/status/status/register.js
 const app = getApp()
 
+const md5 = require('../../../utils/md5.js')
+
 Page({
 
   /**
@@ -140,7 +142,7 @@ Page({
       url: app.$api.public.login,
       method: 'POST',
       //data: {tel: this.data.phone, code: this.data.code},
-      data: {tel: '15133124113', password: 'hehe123'},
+      data: {tel: '13739756831', password: md5('123456').toLocaleUpperCase()},
       success: res => {
         if (res.data.result == 1) {
           // 存储token

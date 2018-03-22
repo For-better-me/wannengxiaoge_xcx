@@ -1,6 +1,6 @@
 <!--pages/person/orderState/orderState.wxml-->
 <!-- 状态 -->
-<view class='main_color stateTitle'>维修完成，待付款</view>
+<view class='main_color stateTitle'>{{data.statusName}}</view>
 <!--订单跟踪  -->
 <navigator url='../orderTrack/orderTrack'>
   <view class='warper'>
@@ -12,11 +12,11 @@
 <!--联系小哥  -->
 <view class='callXG'>
   <view class='xgHead fl'>
-    <image src='/img/avatar.png'></image>
+    <image src="{{data.userLogoUrl}}"></image>
   </view>
   <view class='xgInfo fl'>
     <view class='info'>
-      <text class='xgName'>马云</text>
+      <text class='xgName'>{{data.userName}}</text>
       <image class='xgGimg' src='/img/icon_super.png'></image>
       <text class='xgGrade'>铜牌小哥</text>
     </view>
@@ -44,14 +44,14 @@
     <text>马桶疏通：非拆卸，手动疏通</text>
   </view>
   <view class='border_top'>维修数量
-    <text>x1</text>
+    <text>x{{data.count}}</text>
   </view>
   <view class='border_top'>维修地址
     <text>李二  15612345678</text>
     <text>石家庄市新华区中储广场A座17层，万能小哥</text>
   </view>
   <view class='border_top'>上门时间
-    <text>2017-07-20  15:30</text>
+    <text>{{data.appointedTime}}</text>
   </view>
   <view class='border_top'>预付费
     <text class='main_color'>￥30</text>

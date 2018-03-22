@@ -7,7 +7,38 @@
   <text class="{{_index == 5?'changeColor':'text'}}" bindtap='selected' data-index = '5'>待评价</text>
 </view>
 <view class='contentbox'>
-  <view>
+  <view wx:if="{{data.length}}">
+    <view class='orderTab' wx:for="{{data}}">
+      <!--上  -->
+      <view class='order_num'>订单编号：
+        <text>{{item.orderNo}}</text>
+        <text class='fr main_color'>{{item.statusName}}</text>
+      </view>
+      <!--中  -->
+      <view class='mid border_top' bindtap='orderDetail' data-orderid="{{item.id}}">
+        <view class='fl orderImg'>
+          <image src='{{item.skuImageUrl}}'></image>
+        </view>
+        <view class='fl order_msg'>
+          <text class='skuName'>{{item.skuName}}</text>
+          <text class='skuBuy_time'>下单时间：{{item.downTime}}</text>
+          <text class='skuStar_time'>上门时间：{{item.appointedTime}}</text>
+          <view>
+              <image class='addrimg fl' src='/img/icon_addr4.png'></image>
+              <text class='skuAddr fl'> {{item.repairAddress}}</text>
+          </view>
+        </view>
+      </view>
+      <!--下  -->
+      <view class='state border_top'>
+        <view class='fl stateW'>
+          <text class='redTxt'>退款中：￥70</text>
+          <text>原路退回预计7个工作日到账</text>
+        </view>
+        <button class='border_4' size='mini'>联系客服</button>
+      </view>
+    </view>
+
     <view class='orderTab'>
       <!--上  -->
       <view class='order_num'>订单编号：
@@ -21,7 +52,7 @@
         </view>
         <view class='fl order_msg'>
           <text class='skuName'>马桶维修</text>
-          <text class='skuBuy_time'>下单时间：  2017-03-19  15:32</text>
+          <text class='skuBuy_time'>下单时间： 2017-03-19  15:32</text>
           <text class='skuStar_time'>上门时间：  2017-03-20  15:32</text>
           <view>
               <image class='addrimg fl' src='/img/icon_addr4.png'></image>
@@ -69,5 +100,9 @@
         <button class='border_4' size='mini'>联系小哥</button>
       </view>
     </view>
-    </view>
   </view>
+  <view class="no_order" wx:else>
+      <image src="/img/no_order.png"></image>
+      <text>暂无订单！</text>
+  </view>
+</view>

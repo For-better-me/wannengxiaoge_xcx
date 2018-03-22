@@ -1,12 +1,16 @@
 // pages/person/orderState/orderState.js
+const app = getApp()
+const util = require('../../../utils/util.js')
+
 Page({
   
   /**
    * 页面的初始数据
    */
   data: {
-    toggle:false,
-    toggleimg: "/img/icon_arrow2.png"
+    toggle: false,
+    toggleimg: "/img/icon_arrow2.png",
+    data: {}, // 订单详情
   },
   // toggle
   toggle2:function(){
@@ -33,7 +37,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options)
+    // 获取订单详情
+    app.request({
+      url: app.$api.order.my_order_details,
+      data: {
+        orderId: options.orderid
+      },
+      success: res => {
+        if (res.data.result == 1) {
+          res.data.data.appointedTime = util.dateFtt('yyyy-MM-dd hh:mm:ss', new Date(res.data.data.appointedTime))
+          this.setData({
+            data: res.data.data
+          })
+        } else {
+          wx.showToast({
+            title: res.data.desc,
+            icon:'none'
+          })
+        }
+      }
+    })
   },
 
   /**

@@ -253,9 +253,13 @@ App({
   runRequestStack(opt) {
     //this.checkLogin(() => {
       // 检测该接口是否需要token
-      if (/token\|/.test(opt.url)) {
-        opt.data = opt.data || {}
-        opt.data.token = wx.getStorageSync('token') ? wx.getStorageSync('token') : ''
+      if (/^token\|/.test(opt.url)) {
+        let _data = opt.data || {}
+        opt.data = null
+        opt.data = {
+          token: wx.getStorageSync('token') ? wx.getStorageSync('token') : '',
+          ..._data
+        }
         opt.url = opt.url.replace('token|', '')
       }
 
@@ -277,12 +281,14 @@ App({
       opt.data = util.queryStringToObject(opt.data)
 
       // 格式化接口地址
+      console.log(5555,opt.url)
       let apiParams = opt.url.match(/{.*?}/g)
       if (apiParams) {
         apiParams.forEach(item => {
           opt.url = opt.url.replace(new RegExp(item), opt.data[item.replace(/[{}]/g, '')])
         })
       }
+      console.log(66666,opt.url)
 
       //防止按钮多次提交
       if (opt.button && this.globalData.isRequest) {

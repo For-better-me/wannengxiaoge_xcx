@@ -211,6 +211,37 @@ function queryStringToObject (queryString) {
   return result
 }
 
+/**
+ * 格式化时间函数
+ * @param  {[type]} fmt  ['yyyy-MM-dd hh:mm:ss:S q']
+ * @param  {[type]} String|Date ['2017-01-11 12:12:55' 时间字符串 | '2017/01/11 12:12:55' 时间字符串 | new Data() 时间对象]
+ * @return {[type]}      ['2017-12-09 12:22:03:233 4']
+ */
+function dateFtt (fmt, date) {
+  if (typeof date === 'string') {
+      // 将时间字符串中的-转换为/，因为IOS不支持-格式的时间字符串
+      date = new Date(date.replace(/-/g, '/'))
+  }
+  var o = {
+      'M+': date.getMonth() + 1,                    // 月份
+      'd+': date.getDate(),                         // 日
+      'h+': date.getHours(),                        // 小时
+      'm+': date.getMinutes(),                      // 分
+      's+': date.getSeconds(),                      // 秒
+      'S': date.getMilliseconds(),                  // 毫秒
+      'q+': Math.floor((date.getMonth() + 3) / 3)   // 季度
+  }
+  if (/(y+)/.test(fmt)) {
+      fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
+  }
+  for (var k in o) {
+      if (new RegExp('(' + k + ')').test(fmt)) {
+          fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
+      }
+  }
+  return fmt
+}
+
 module.exports = {
   isPhone,
   count,
@@ -219,5 +250,6 @@ module.exports = {
   returnYear,
   returnMonth,
   merge,
-  queryStringToObject
+  queryStringToObject,
+  dateFtt
 }
