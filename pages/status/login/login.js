@@ -137,7 +137,7 @@ Page({
   login () {
     // 登录
     app.request({
-      url: app.$api2.public.login,
+      url: app.$api.public.login,
       method: 'POST',
       //data: {tel: this.data.phone, code: this.data.code},
       data: {tel: '15133124113', password: 'hehe123'},

@@ -2,7 +2,6 @@
 const util = require('./utils/util.js')
 const md5 = require('./utils/md5.js')
 const api = require('./utils/api.js')
-const api2 = require('./utils/api2.js')
 const config = require('./utils/config.js')
 const ENV = 'dev' // 开发环境配置 dev开发环境  pro生产环境
 
@@ -45,13 +44,13 @@ App({
     // })
 
     
-    this.request({
-      url: this.$api.person.serverTypeList,
-      data: {cityCode: '130105', serviceId: 0},
-      success: res => {
-        console.log(4,res)
-      }
-    })
+    // this.request({
+    //   url: this.$api.person.serverTypeList,
+    //   data: {cityCode: '130105', serviceId: 0},
+    //   success: res => {
+    //     console.log(4,res)
+    //   }
+    // })
 
     // this.request({
     //   url: this.$api.demo.service_type_info,
@@ -71,7 +70,7 @@ App({
 
     // 发送验证码 √
     // this.request({
-    //   url: this.$api2.public.sms,
+    //   url: this.$api.public.sms,
     //   method: 'POST',
     //   data: {phone: '15133124113', type: '1'},
     //   success: res => {
@@ -81,7 +80,7 @@ App({
 
     // 注册 √
     // this.request({
-    //   url: this.$api2.public.register,
+    //   url: this.$api.public.register,
     //   method: 'POST',
     //   data: {name: 'renjie', sex: '2', tel: '15133124113', code: '1549', password: 'hehe123', openid: '1'},
     //   expressData: {avatarUrl: ''},
@@ -92,7 +91,7 @@ App({
 
     // 登录 √
     // this.request({
-    //   url: this.$api2.public.login,
+    //   url: this.$api.public.login,
     //   method: 'POST',
     //   data: {tel: '15133124113', password: 'hehe123'},
     //   success: res => {
@@ -101,7 +100,7 @@ App({
     // })
 
     this.request({
-      url: this.$api2.address.user_default_address,
+      url: this.$api.address.user_default_address,
       success: res => {
         console.log('ffff',res)
       }
@@ -253,19 +252,20 @@ App({
   },
   runRequestStack(opt) {
     //this.checkLogin(() => {
+      // 检测该接口是否需要token
+      if (/token\|/.test(opt.url)) {
+        opt.data = opt.data || {}
+        opt.data.token = wx.getStorageSync('token') ? wx.getStorageSync('token') : ''
+        opt.url = opt.url.replace('token|', '')
+      }
+
       // 封装公共入参 和 接口入参
       let _queryString = {
         encodingType: config.encodingType, // 返回值编码 1 UTF8
         origin: config.origin, // 来源 1 用户 | 2 Android小哥 | 3 IOS小哥 | 4 商户 | 5 经销商 | 6 Ios用户 | 7 Android用户
         signType: config.signType, // 签名方式 1 md5
         ...opt.data,
-        signKey: config.signKey, // 加密的key
-      }
-
-      // 检测该接口是否需要token
-      if (/token\|/.test(opt.url)) {
-        _queryString.token = wx.getStorageSync('token') ? wx.getStorageSync('token') : ''
-        opt.url = opt.url.replace('token|', '')
+        signKey: config.signKey // 加密的key
       }
 
       let queryString = ''
@@ -405,8 +405,7 @@ App({
     wx.setStorageSync('province', userInfo.province)
     wx.setStorageSync('city', userInfo.city)
   },
-  $api: ENV == "dev" ? api.dev : api.pro, //接口定义
-  $api2: api2, //接口定义2
+  $api: api, //接口定义
   globalData: {
     userInfo: null
   }
