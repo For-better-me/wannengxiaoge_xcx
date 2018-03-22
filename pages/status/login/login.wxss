@@ -37,14 +37,13 @@
   color: #333;
 }
 
-
-.register_item  .icon_eye {
-  width: 43rpx;
-  height: 26rpx;
+.register_item .capcha {
+  width: 150rpx;
   display: inline-block;
-  float: right;
-  margin-right: 40rpx;
-  margin-top: 37rpx;
+  font-size: 25rpx;
+  vertical-align: top;
+  line-height: 103rpx;
+  color: #fb870d;
 }
 
 .agreement{
@@ -64,34 +63,19 @@
 
 .btn{
     display: block;
-    width: 295rpx;
-    height: 83rpx;
+    width: 650rpx;
+    height: 85rpx;
     border-radius: 10rpx;
-    font-size: 33rpx;
+    font-size: 34rpx;
     color: #fff;
     box-sizing: border-box;
-    line-height: 83rpx;
+    line-height: 85rpx;
     text-align: center;
-    margin-top:48rpx
-   
+    margin-top: 50rpx
 }
 
-.btn_register{
-    background: transparent;
-    color: #fb870d;
-    float: left;
-    position: relative;
-    box-sizing: border-box;
-    margin-left: 20rpx;
-}
-.btn_register:after{
-  border-color: #fb870d;
-  border-radius: 20rpx;
-}
 .btn_login{
-     float: right;
-     background: #fb870d;
-     margin-right: 20rpx;
+  background: #fb870d;
 }
 .forget{
   font-size: 25rpx;
@@ -99,4 +83,17 @@
   margin-left: 50rpx;
   margin-top: 20rpx;
 }
+
+.tip{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 27rpx;
+  padding-bottom: 30rpx;
+  color: #999;
+}
+.tip .text{line-height: 50rpx;}
+.tip image{width: 42rpx; height: 42rpx; vertical-align: middle;}
 

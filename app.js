@@ -2,6 +2,7 @@
 const util = require('./utils/util.js')
 const md5 = require('./utils/md5.js')
 const api = require('./utils/api.js')
+const api2 = require('./utils/api2.js')
 const config = require('./utils/config.js')
 const ENV = 'dev' // 开发环境配置 dev开发环境  pro生产环境
 
@@ -37,19 +38,74 @@ App({
     // this.request({
     //   url: this.$api.person.problems,
     //   method: 'POST',
-    //   data: {name: '马桶', isHot: 2, pageSize: 10},
+    //   data: {name: '*', isHot: 1, pageSize: 1},
     //   success: res => {
     //     console.log(3,res)
     //   }
     // })
 
+    
+    this.request({
+      url: this.$api.person.serverTypeList,
+      data: {cityCode: '130105', serviceId: 0},
+      success: res => {
+        console.log(4,res)
+      }
+    })
+
     // this.request({
-    //   url: this.$api.person.serverTypeList,
-    //   data: {cityCode: '110101', serviceId: 0},
+    //   url: this.$api.demo.service_type_info,
+    //   data: {serviceId: 9840},
     //   success: res => {
     //     console.log(4,res)
     //   }
     // })
+
+    // this.request({
+    //   url: this.$api.demo.skuDetail,
+    //   data: {id: 123334},
+    //   success: res => {
+    //     console.log(4,res)
+    //   }
+    // })
+
+    // 发送验证码 √
+    // this.request({
+    //   url: this.$api2.public.sms,
+    //   method: 'POST',
+    //   data: {phone: '15133124113', type: '1'},
+    //   success: res => {
+    //     console.log(4,res)
+    //   }
+    // })
+
+    // 注册 √
+    // this.request({
+    //   url: this.$api2.public.register,
+    //   method: 'POST',
+    //   data: {name: 'renjie', sex: '2', tel: '15133124113', code: '1549', password: 'hehe123', openid: '1'},
+    //   expressData: {avatarUrl: ''},
+    //   success: res => {
+    //     console.log(4,res)
+    //   }
+    // })
+
+    // 登录 √
+    // this.request({
+    //   url: this.$api2.public.login,
+    //   method: 'POST',
+    //   data: {tel: '15133124113', password: 'hehe123'},
+    //   success: res => {
+    //     console.log(4,res)
+    //   }
+    // })
+
+    this.request({
+      url: this.$api2.address.user_default_address,
+      success: res => {
+        console.log('ffff',res)
+      }
+    })
 
 
     // wx.chooseAddress({
@@ -206,6 +262,12 @@ App({
         signKey: config.signKey, // 加密的key
       }
 
+      // 检测该接口是否需要token
+      if (/token\|/.test(opt.url)) {
+        _queryString.token = wx.getStorageSync('token') ? wx.getStorageSync('token') : ''
+        opt.url = opt.url.replace('token|', '')
+      }
+
       let queryString = ''
       for (let key in _queryString) {
         queryString += (queryString != '' ? '&' : '') + `${key}=${_queryString[key]}`
@@ -228,14 +290,17 @@ App({
         return
       }
 
-      ////const sessionid = wx.getStorageSync('sessionid')
-      ////opt.data.sessionId = sessionid
-
       const defaultOpt = {
         loading: true, // 是否显示Loading提示窗
         method: 'GET', // 请求方法，必须大写！！
+        data: {}, // 需要加密的数据
+        expressData: {}, // 不需要加密的数据
+        header: {
+          token: wx.getStorageSync('token') ? wx.getStorageSync('token') : ''
+        }
       }
 
+      // 合并配置项
       opt = util.merge(defaultOpt, opt)
 
       if (opt.loading) {
@@ -249,22 +314,22 @@ App({
         url: opt.url,
         method: opt.method,
         data: opt.data,
+        header: opt.header,
         success: res => {
-          if (res.data.err == 101) {
-            // 后台未登录或登录超时
-            this._log('后台未登录或登录超时')
-            this.login(() => {
-              this.request(opt)
-            })
-          } else if (res.data.err == 1) {
-            wx.showModal({
-              title: '提示',
-              content: res.data.msg || '网络错误',
-              showCancel: false,
-              success: () => {
-                this.runCallback(opt.fail, res)
+          if (res.data.result == '9996') {
+            // token验证失败
+            this._log('未登录或token超时')
+            setTimeout(() => {
+              let routes = getCurrentPages()
+              let redirectUrl = '/pages/status/login/login?redirect=/pages/index/index'
+              if (routes.length) {
+                let redirect = routes[routes.length - 1]
+                redirectUrl = `/pages/status/login/login?redirect=/${redirect.route}`
               }
-            })
+              wx.navigateTo({
+                url: redirectUrl
+              })
+            }, 100)
           } else {
             this.runCallback(opt.success, res)
           }
@@ -341,6 +406,7 @@ App({
     wx.setStorageSync('city', userInfo.city)
   },
   $api: ENV == "dev" ? api.dev : api.pro, //接口定义
+  $api2: api2, //接口定义2
   globalData: {
     userInfo: null
   }

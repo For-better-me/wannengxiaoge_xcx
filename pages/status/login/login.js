@@ -1,20 +1,31 @@
 // pages/status/status/register.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    phone: '',
+    code: '',
     readFlag: true,
     isOpen: false,
-    passwordType: 'password'
+    captcha: '获取验证码',
+    isGetCaptcha: true,
+    redirect: '', // 登录成功后的重定向页面
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.redirect) {
+      this.setData({
+        redirect: options.redirect
+      })
+    }
+    console.log(getCurrentPages())
   },
 
   /**
@@ -59,25 +70,98 @@ Page({
 
   },
 
+  setPhoneValue (e) { // 设置手机号
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  setCodeValue (e) { // 设置验证码值
+    this.setData({
+      code: e.detail.value
+    })
+  },
+  getCaptcha () {
+    // 获取验证码
+    if (this.data.phone == '') {
+      wx.showToast({
+        title: '手机号不能为空',
+        icon:'none'
+      })
+      return
+    }
+    if (!/^1[3456789]\d{9}$/.test(this.data.phone)) {
+      wx.showToast({
+        title: '手机号格式错误',
+        icon:'none'
+      })
+      return
+    }
+
+    if (this.data.isGetCaptcha) {
+      this.setData({
+        isGetCaptcha: true
+      })
+      app.request({
+        url: app.$api.status.sms,
+        data: {phone: this.data.phone, type: '1'},
+        method: 'POST',
+        success: res => {
+          if (res.result == 1) {
+            let time = 60;
+            let interval = setInterval(() => {
+              if (--time > 0) {
+                this.setData({
+                  captcha: `重新发送(${time})`
+                })
+              } else {
+                clearInterval(interval)
+                this.setData({
+                  isGetCaptcha: false,
+                  captcha: `获取验证码`
+                })
+              }
+            }, 1000)
+          } else {
+            wx.showToast({
+              title: res.desc,
+              icon:'none'
+            })
+            this.setData({
+              isGetCaptcha: false
+            })
+          }
+        }
+      })
+    }    
+  },
+  login () {
+    // 登录
+    app.request({
+      url: app.$api2.public.login,
+      method: 'POST',
+      //data: {tel: this.data.phone, code: this.data.code},
+      data: {tel: '15133124113', password: 'hehe123'},
+      success: res => {
+        if (res.data.result == 1) {
+          // 存储token
+          wx.setStorageSync("token", res.data.data.token)
+          if (this.data.redirect) {
+            wx.navigateBack()
+          }
+        } else {
+          wx.showToast({
+            title: res.data.desc,
+            icon:'none'
+          })
+        }
+      }
+    })
+  },
+
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
   },
-
-  toggleType: function () {
-    let isOpen = !this.data.isOpen;
-    let type = '';
-    if (isOpen) {
-      type = 'text'
-    }
-    else {
-      type = 'password'
-    }
-    this.setData({
-      isOpen: isOpen,
-      passwordType: type
-    })
-  }
 })

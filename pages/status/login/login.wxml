@@ -5,24 +5,34 @@
     <view class='register_item'>
       <image src='/img/icon_phone.png'></image>
       <view class='border_bottom'>
-        <input placeholder='请输入您的手机号' placeholder-class='placeholder_class' type='number'></input>
+        <input placeholder='请输入手机号' placeholder-class='placeholder_class' type='number' bindinput="setPhoneValue"></input>
       </view>
     </view>
 
     <view class='register_item'>
-      <image src='/img/icon_password2.png'></image>
+      <image src='/img/icon_password.png'></image>
       <view class='border_bottom'>
-        <input type='{{passwordType}}' placeholder='请输入密码' placeholder-class='placeholder_class'></input>
-        <image src='/img/icon_open.png' class='icon_eye' wx:if="{{isOpen}}" bindtap='toggleType'></image>
-        <image src='/img/icon_close.png' class='icon_eye' wx:else bindtap='toggleType'></image>
+        <input placeholder='请输入验证码' placeholder-class='placeholder_class'></input>
+        <view class='capcha' bindtap='getCaptcha'>{{captcha}}</view>
       </view>
     </view>
-    <navigator class='forget' url='../forget/forget'>忘记密码</navigator>
 
-    <view class='wrap'>
-       <navigator class='btn btn_register border_4' url='../register/register'>注册</navigator>
-       <button class='btn btn_login'>登陆</button>
+    <view class='agreement wrap'>
+      <label class="radio" >
+        <radio value=""  checked='{{readFlag}}' bindtap='toggleRead' />我已阅读并同意 <text>《万能小哥用户协议》</text>
+      </label>
     </view>
 
+    <view class='wrap'>
+      <button class='btn btn_login' bindtap="login">登陆</button>
+    </view>
+
+    <view class='tip'>
+      <view class="text">
+        <image src='/img/icon_password.png'></image>
+        温馨提示
+      </view>
+      <view class="text">未注册过的手机号码将会为您自动创建万能小哥账号</view>
+    </view>
   </form>
 </view>
