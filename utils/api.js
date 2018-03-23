@@ -2,7 +2,7 @@
  * 小程序接口定义文件
  */
 
-const baseUrl = "http://118.31.116.206:8080/wnxg-platform" // 测试版线上接口
+const baseUrl = "http://118.31.116.74:8080/wnxg-platform" // 测试版线上接口
 // const baseUrl = "https://a.abc.com" // 正式版线上接口
 
 const api = {
@@ -15,7 +15,7 @@ const api = {
         virtualTel: `${baseUrl}/ws/user/axb/{orderId}`, // 4.51.获取虚拟号(GET)
         brotherInfo: `${baseUrl}/ws/user/xg_info/{xgId}`, // 4.53.获取小哥信息接口(GET)
         login: `${baseUrl}/ws/user/login`, // 4.2.用户登录接口(POST)
-        fastLogin: `${baseUrl}/ws/user/WeChatLogin`, // 4.48.用户快速登录接口(POST)
+        fast_registe: `${baseUrl}/ws/user/fast_register`, // 文档暂无说明：用户快速登录(POST)
         loginOut: `${baseUrl}/ws/user/logout`, // 4.47.退出接口(POST)
     },
     problem: { // 问题

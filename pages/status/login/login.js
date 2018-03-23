@@ -14,7 +14,7 @@ Page({
     readFlag: true,
     isOpen: false,
     captcha: '获取验证码',
-    isGetCaptcha: true,
+    isGetCaptcha: true, // 是否可以获取手机验证码
     redirect: '', // 登录成功后的重定向页面
   },
 
@@ -101,14 +101,14 @@ Page({
 
     if (this.data.isGetCaptcha) {
       this.setData({
-        isGetCaptcha: true
+        isGetCaptcha: false
       })
       app.request({
-        url: app.$api.status.sms,
-        data: {phone: this.data.phone, type: '1'},
+        url: app.$api.public.sms,
+        data: {phone: this.data.phone, type: '23'},
         method: 'POST',
         success: res => {
-          if (res.result == 1) {
+          if (res.data.result == 1) {
             let time = 60;
             let interval = setInterval(() => {
               if (--time > 0) {
@@ -118,18 +118,18 @@ Page({
               } else {
                 clearInterval(interval)
                 this.setData({
-                  isGetCaptcha: false,
+                  isGetCaptcha: true,
                   captcha: `获取验证码`
                 })
               }
             }, 1000)
           } else {
             wx.showToast({
-              title: res.desc,
+              title: res.data.desc,
               icon:'none'
             })
             this.setData({
-              isGetCaptcha: false
+              isGetCaptcha: true
             })
           }
         }
@@ -139,10 +139,9 @@ Page({
   login () {
     // 登录
     app.request({
-      url: app.$api.public.login,
+      url: app.$api.public.fast_registe,
       method: 'POST',
-      //data: {tel: this.data.phone, code: this.data.code},
-      data: {tel: '13739756831', password: md5('123456').toLocaleUpperCase()},
+      data: {tel: this.data.phone, code: this.data.code},
       success: res => {
         if (res.data.result == 1) {
           // 存储token

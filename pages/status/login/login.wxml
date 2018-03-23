@@ -12,7 +12,7 @@
     <view class='register_item'>
       <image src='/img/icon_password.png'></image>
       <view class='border_bottom'>
-        <input placeholder='请输入验证码' placeholder-class='placeholder_class'></input>
+        <input placeholder='请输入验证码' placeholder-class='placeholder_class' bindinput="setCodeValue"></input>
         <view class='capcha' bindtap='getCaptcha'>{{captcha}}</view>
       </view>
     </view>
