@@ -1,0 +1,55 @@
+/* pages/person/orderTrack/orderTrack.wxss */
+.orderState {
+  overflow: hidden;
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+.orderInfo {
+  background: #fff;
+}
+.orderInfo .line {
+  font-size: 27rpx;
+  padding: 30rpx;
+  overflow: hidden;
+}
+.orderInfo .line text{
+  float: right;
+  color: #999;
+  font-size: 27rpx;
+}
+.process {
+  padding: 0 30rpx 0 60rpx;
+  overflow: hidden;
+  height: 130rpx;
+  position: relative;
+}
+.process image{
+  width: 38rpx;
+  height: 38rpx;
+  float: left;
+}
+.process .processTxt{
+  margin-left: 30rpx;
+}
+.process .processTxt text{
+  display: block;
+}
+.process .processTxt text:first-child{
+  font-size: 25rpx;
+}
+.process .processTxt text:last-child{
+  font-size: 23rpx;
+  color: #999;
+}
+.z-line{
+  width: 3rpx;
+  height: 80rpx;
+  background: #fb870f;
+  position: absolute;
+  top: 40rpx;
+  left: 76rpx;
+}
+.process:last-child .z-line{
+  display: none;
+}

@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/order/orderList/orderList",
+    "pages/order/orderState/orderState",
+    "pages/order/orderTrack/orderTrack",
     "pages/orderList/orderList",
     "pages/index/index",
     "pages/status/login/login",

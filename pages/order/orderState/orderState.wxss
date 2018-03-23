@@ -1,0 +1,241 @@
+/* pages/person/orderState/orderState.wxss */
+.stateTitle{
+  background: #fff;
+  padding: 0 30rpx;
+  line-height: 100rpx;
+  display: inline-block;
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 31rpx;
+  margin-bottom: 20rpx;
+}
+
+.order_num{
+  background: #fff;
+  padding: 0 30rpx;
+  line-height: 100rpx;
+  display: inline-block;
+  height: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 29rpx;
+  margin-bottom: 20rpx;
+}
+.warper {
+  margin-bottom: 20rpx;
+  padding: 30rpx;
+  background: #fff;
+  font-size: 29rpx;
+  position: relative;
+}
+.warper .record{
+  margin: 5rpx 26rpx 10rpx 0;
+  padding-right: 0.3rem;
+  width: 480rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 25rpx;
+  color: #999;
+}
+.warper image{
+  position: absolute;
+  width: 12rpx;
+  height: 21rpx;
+  right: 30rpx;
+  top: 42%;
+}
+.icon_arrow{
+  width: 12rpx;
+  height: 21rpx;
+}
+.sameHeight{
+  height: 99rpx;
+  line-height: 99rpx;
+  background: #fff;
+  font-size: 29rpx;
+}
+.sameHeight2{
+  height: 75rpx;
+  line-height: 75rpx;
+  font-size: 28rpx;
+}
+.orderMsg ,.coupon{
+  padding:  0 30rpx;
+  margin-bottom: 20rpx;
+}
+.orderMsg text ,.coupon text{
+  font-size: 27rpx;
+}
+.orderMsg image, .coupon image{
+  margin-top: 40rpx;
+  margin-left: 10rpx;
+}
+.repair{
+  padding: 0 30rpx;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.cost view{
+  overflow: hidden;
+  margin-bottom: 24rpx;
+}
+.cost view text{
+  color: #666;
+}
+.coupon text{
+  color: #999;
+  font-size: 27rpx;
+}
+.repairRecord {
+  padding: 36rpx 30rpx;
+  background: #fff;
+  margin-bottom: 120rpx;
+}
+.repairRecord .tit{
+  font-size: 27rpx;
+  margin-bottom: 15rpx;
+}
+.repairRecord text{
+  color: #999;
+  display: block;
+  line-height: 160%;
+}
+.imgBox{
+  padding: 20rpx 0 0;
+  overflow: hidden;
+}
+.imgBox view{
+  width: 160rpx;
+  height: 160rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.imgBox view image{
+  width: 100%;
+  height: 100%;
+}
+.pay {
+  background: #fff;
+  height: 100rpx;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right: 0;
+  text-align: right
+}
+.pay  text{
+  font-size: 33rpx;
+  margin-top: 30rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.pay button{
+  background: #fb870d;
+  border-radius: 0;
+  font-size: 33rpx;
+  height: 100%;
+  line-height: 100rpx;
+  color: #fff;
+  width: 240rpx; 
+}
+.repairCost image{
+  width: 20rpx;
+  height: 11rpx;
+  float: right;
+  margin-left: 10rpx;
+  margin-top: 45rpx;
+}
+.callXG{
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+.callXG .xgHead{
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 100%;
+}
+.callXG .xgHead image{
+  width: 100%;
+  height: 100%;
+}
+.callXG .xgInfo {
+  margin-left: 33rpx;
+}
+.callXG .xgInfo .info{
+  margin: 15rpx 0;
+  overflow: hidden;
+}
+.callXG .xgInfo .xgGimg{
+  width: 26rpx;
+  height: 26rpx;
+  display: block;
+  margin: 8rpx 12rpx 0 20rpx;
+  float: left;
+}
+.callXG .xgInfo .xgName{
+  font-size: 31rpx;
+  float: left;
+}
+.callXG .xgInfo .xgGrade{
+  color:#ad8346;
+  font-size: 25rpx;
+  float: left;
+  margin-top: 7rpx;
+}
+.callXG .xgInfo .star{
+  overflow: hidden;
+}
+.callXG .xgInfo .iconStar{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+}
+.callXG .xgInfo .star text{
+  float: left;
+  font-size: 25rpx;
+  color: #ad8346;
+  margin-left: 15rpx;
+}
+.callXG .tel{
+  width: 76rpx;
+  height: 76rpx;
+  margin-top: 20rpx;
+}
+.callXG .tel image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 维修信息 */
+.repairInfo {
+  background: #fff;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+.repairInfo .title{
+  font-size: 29rpx;
+  display: block;
+  margin-top: 30rpx;
+}
+.repairInfo view{
+  font-size: 29rpx;
+  color: #666;
+  overflow: hidden;
+  padding: 30rpx 0;
+}
+.repairInfo view text{
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+/*跟踪地图  */
+.map map{
+  width: 100%;
+}
