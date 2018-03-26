@@ -47,7 +47,7 @@ Page({
         if (res.data.result == 1) {
           res.data.data.appointedTime = util.dateFtt('yyyy-MM-dd hh:mm:ss', new Date(res.data.data.appointedTime))
           res.data.data.downTime = util.dateFtt('yyyy-MM-dd hh:mm:ss', new Date(res.data.data.downTime))
-          res.data.data.orderOperateRecord.creatTime = util.dateFtt('yyyy-MM-dd hh:mm', new Date(res.data.data.orderOperateRecord.creatTime))
+          res.data.data.orderOperateRecord.creatTime = util.dateFtt('yyyy-MM-dd hh:mm:ss', new Date(res.data.data.orderOperateRecord.creatTime))
           this.setData({
             data: res.data.data
           })

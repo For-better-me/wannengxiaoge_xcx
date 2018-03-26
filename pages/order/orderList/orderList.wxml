@@ -35,70 +35,108 @@
           <view class='fl stateW'>
             <text class='main_color margin_top_10'>预付费：￥{{item.prepayment}}</text>
           </view>
-          <button class='border_4' size='mini'>去支付</button>
+          <button class='border_4' size='mini'>立即支付</button>
           <button class='border_4' size='mini'>取消订单</button>
         </view>
       </block>
       <block wx:elif="{{item.status == 2}}">
-      
+        <view class='state border_top'>
+          <button class='border_4' size='mini'>联系客服</button>
+          <button class='border_4' size='mini'>取消订单</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 3}}">
-      
+        <view class='state border_top'>
+          <button class='border_4' size='mini'>联系小哥</button>
+          <button class='border_4' size='mini'>取消订单</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 4}}">
-      
+        <view class='state border_top'>
+          <button class='border_4' size='mini'>联系小哥</button>
+          <button class='border_4' size='mini'>取消订单</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 5}}">
-      
+        <view class='state border_top'>
+          <button class='border_4' size='mini'>联系小哥</button>
+          <button class='border_4' size='mini'>取消订单</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 6}}">
-      
+        <view class='state border_top'>
+          <button class='border_4' size='mini'>联系客服</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 7}}">
-      
+        <view class='state border_top'>
+          <button class='border_4' size='mini'>联系客服</button>
+          <button class='border_4' size='mini'>立即支付</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 8}}">
-      
+        <view class='state border_top'>
+          <button class='border_4' size='mini'>申请返修</button>
+          <button class='border_4' size='mini'>评价</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 9}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 10}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 11}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 12}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 13}}">
         <view></view>
       </block>
       <block wx:elif="{{item.status == 14}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 15}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 16}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 17}}">
-      
+        <view class='state border_top'>
+          <view class='fl stateW'>
+            <text class='main_color margin_top_10'>预付费：￥{{item.prepayment}}</text>
+          </view>
+          <button class='border_4' size='mini'>联系客服</button>
+          <button class='border_4' size='mini'>取消订单</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 18}}">
-      
+        <view class='state border_top'>
+          <view class='fl stateW'>
+            <text class='main_color margin_top_10'>预付费：￥{{item.prepayment}}</text>
+          </view>
+          <button class='border_4' size='mini'>联系客服</button>
+          <button class='border_4' size='mini'>取消订单</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 19}}">
-      
+        <view class='state border_top'>
+          <view class='fl stateW'>
+            <text class='main_color margin_top_10'>预付费：￥{{item.prepayment}}</text>
+          </view>
+          <button class='border_4' size='mini'>联系客服</button>
+          <button class='border_4' size='mini'>取消订单</button>
+        </view>
       </block>
       <block wx:elif="{{item.status == 20}}">
-      
+        <view></view>
       </block>
       <block wx:elif="{{item.status == 21}}">
-      
-      </block>
+        <view></view>
+      </block>  
     </view>
 
     <view class='orderTab'>

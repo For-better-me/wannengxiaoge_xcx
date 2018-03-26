@@ -1,10 +1,10 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/order/orderList/orderList",
     "pages/order/orderState/orderState",
     "pages/order/orderTrack/orderTrack",
     "pages/orderList/orderList",
-    "pages/index/index",
     "pages/status/login/login",
     "pages/person/bill/bill",
     "pages/person/billApply/billApply",

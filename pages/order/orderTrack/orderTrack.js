@@ -8,10 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    num: 'WNQYD3438524',
-    state: '订单已取消，退款中',
-    skuname: '马桶疏通：非拆卸，手动疏通',
-    toDorTime: '2017.06.10  15:30',
     url: '/img/tail.png',
     url2: '/img/icon_select.png',
     data: {}, // 订单详情

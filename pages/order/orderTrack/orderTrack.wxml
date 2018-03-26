@@ -6,7 +6,7 @@
 </view>
 <view class='orderInfo'>
   <view class='line border_bottom'>维修项：
-    <text>{{data.serviceTypeName}}-{{data.skuItemName}}-{{data.skuName}} </text>
+    <text>{{data.serviceTypeName}}-{{data.skuItemName}}-{{data.skuName}}</text>
   </view>
   <view class='line border_bottom'>预约上门时间：
     <text>{{data.appointedTime}}</text>
